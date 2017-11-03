@@ -31,18 +31,18 @@ const Login = () => (
                 type="password"
                 label="Password"
                 name="password"
-                errorText="Password Erroe"
+                errorText="Password Error"
                 onChange="handlePassword"
               />
             </div>
-            <RaisedButton className="loginButton" primary fullWidth type="submit">
-              Login
-            </RaisedButton>
-            <Link to={'/signup'}>
+            <div className="login-button-bar">
+              <RaisedButton className="loginButton" primary fullWidth type="submit">
+                Login
+              </RaisedButton>
               <RaisedButton className="signUpButton" primary fullWidth>
                 Sign Up
               </RaisedButton>
-            </Link>
+            </div>
           </form>
         </div>
       </Paper>
@@ -50,8 +50,5 @@ const Login = () => (
   </div>
 );
 
-Login.propTypes = {
-  
-};
 
 export default Login;

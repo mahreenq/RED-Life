@@ -8,7 +8,7 @@ const App = () => (
       <div>
         <MuiThemeProvider>
           <Layout>
-              <div>Children</div>
+            <div>Children</div>
           </Layout>
         </MuiThemeProvider>
       </div>
