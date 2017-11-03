@@ -8,6 +8,8 @@ import CreateIdea from '../imports/ui/containers/CreateIdea';
 import {Provider} from 'react-redux';
 import muiTheme from '../imports/ui/config/theme';
 import Idea from '../imports/ui/containers/IdeaContainer';
+import Login from '../imports/ui/containers/LoginContainer';
+import SignUp from '../imports/ui/containers/SignUpContainer';
 
 const App = () => (
       <div>
@@ -16,7 +18,8 @@ const App = () => (
             <MuiThemeProvider muiTheme={muiTheme}>
               <Switch>
                 <Layout>
-                  {/* <Route exact path="/login" component={Login} /> */}
+                  <Route exact path="/login" component={Login} />
+                  <Route exact path="/signup" component={SignUp} />
                   <Route exact path="/idea" component={Idea} />
                   {/* <Route path="/profile/:userid" component={Profile} /> */}
                 </Layout>
