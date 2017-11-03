@@ -19,12 +19,22 @@ class IdeaContainer extends Component {
     render() {
         //let ideaData = this.props.ideaData;
 
-        let ideaData = {
-            title: '',
-            description: '',
-            author: '',
-            imageurl: ''
-        }
+        let ideaData = [
+            {
+                title: 'hi',
+                description: 'buy',
+                author: 'h',
+                imageurl: 'yiuy'
+            },
+
+            {
+                title: 'hi',
+                description: 'buy',
+                author: 'h',
+                imageurl: 'yiuy'
+            }
+
+        ]
 
         return (
             <Idea
@@ -33,6 +43,8 @@ class IdeaContainer extends Component {
         );
     }
 }
+
+export default IdeaContainer;
 
 //export const ideaQuery = gql`
 //     query getItems {
@@ -53,7 +65,7 @@ class IdeaContainer extends Component {
 //         }
 //     }
 //`;
-//========================================
+
 // IdeaContainer.propTypes = {
 
 // };

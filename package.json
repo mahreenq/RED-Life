@@ -14,16 +14,13 @@
     "react-dom": "^16.0.0",
     "react-meteor-data": "^0.2.11",
     "react-redux": "^5.0.6",
-<<<<<<< HEAD
     "redux": "^3.7.2",
-    "redux-form": "^7.1.2"
-=======
+    "redux-form": "^7.1.2",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
     "redux-form": "^7.1.2",
     "redux-form-material-ui": "^4.3.0",
     "redux-thunk": "^2.2.0"
->>>>>>> a54c27b80c589682c8b31842329e03837aa9d783
   }
 }
