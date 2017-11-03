@@ -5,12 +5,13 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 // import Theme from './imports/ui/config/theme';
 import CreateIdea from './imports/ui/containers/CreateIdea';
 import {Provider} from 'react-redux';
+import muiTheme from './imports/ui/config/theme';
 
 const App = () => (
       <div>
         <BrowserRouter>
           {/* <Provider> */}
-            <MuiThemeProvider>
+            <MuiThemeProvider muiTheme={muiTheme}>
               <Switch>
                 <Layout>
                   {/* <Route exact path="/login" component={Login} /> */}
