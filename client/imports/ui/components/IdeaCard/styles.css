@@ -1,0 +1,20 @@
+.ideaCard {
+    width: 98%;
+    margin: 1%;
+}
+
+@media only screen and (min-width: 600px) {
+    .ideaCard {
+        width: 48%;
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    .ideaCard {
+        width: 31%;
+    }
+}
+
+.ideaImage img {
+    border-radius: 50%;
+}
