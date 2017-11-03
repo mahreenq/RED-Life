@@ -7,7 +7,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import MenuItem from 'material-ui/MenuItem';
-import FilterList from '../../containers/FilterList/';
+
 import './styles.css';
 
 const SignUp = () => {
@@ -33,15 +33,11 @@ const SignUp = () => {
                   </div>
                 </div>
               <div>
-                <FilterList />
               </div>
                 <div>
                   <RaisedButton className="enterButton" primary fullWidth type="submit">
                     Sign Up
                   </RaisedButton>
-                  <Link to="{'/login'}" className="cancel">
-                    <p>Cancel</p>
-                  </Link>
                 </div>
             </form>
           </div>
