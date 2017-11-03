@@ -12,6 +12,7 @@ import Login from '../imports/ui/containers/LoginContainer';
 import SignUp from '../imports/ui/containers/SignUpContainer';
 import Profile from '../imports/ui/containers/Profile';
 
+
 const App = () => (
       <div>
         <BrowserRouter>
@@ -23,6 +24,7 @@ const App = () => (
                   <Route exact path="/signup" component={SignUp} />
                   <Route exact path="/idea" component={Idea} />
                   <Route exact path="/profile" component={Profile} />
+      
                   {/* <Route path="/profile/:userid" component={Profile} /> */}
                 </Layout>
               </Switch>
