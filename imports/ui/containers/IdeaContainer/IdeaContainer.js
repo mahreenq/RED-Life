@@ -53,24 +53,24 @@ class IdeaContainer extends Component {
 //         }
 //     }
 //`;
+//========================================
+// IdeaContainer.propTypes = {
 
-IdeaContainer.propTypes = {
+// };
 
-};
+// const mapStateToProps = state => ({
+//     ideaData: state.items.ideaData
+// });
 
-const mapStateToProps = state => ({
-    ideaData: state.items.ideaData
-});
+// export default createContainer(() => {
+//   Meteor.subscribe('ideas');
 
-export default createContainer(() => {
-  Meteor.subscribe('ideas');
-
-  return {
-    currentUser: Meteor.user(),
-    currentUserId: Meteor.userId(), // b/c pulling it off above breaks if logged out
-    ideas: Ideas.find({}).fetch()
-  };
-}, IdeaContainer);
+//   return {
+//     currentUser: Meteor.user(),
+//     currentUserId: Meteor.userId(), // b/c pulling it off above breaks if logged out
+//     ideas: Ideas.find({}).fetch()
+//   };
+// }, IdeaContainer);
 
 // const IdeaWrap = createContainer(function() {
 //     Meteor.subscribe('ideas');
