@@ -15,15 +15,6 @@ import Profile from '../imports/ui/containers/Profile';
 
 const App = () => (
       <div>
-<<<<<<< HEAD
-        <MuiThemeProvider>
-          <Layout>
-          <div>
-          <div>Children</div>
-          </div>
-          </Layout>
-        </MuiThemeProvider>
-=======
         <BrowserRouter>
           {/* <Provider> */}
             <MuiThemeProvider muiTheme={muiTheme}>
@@ -40,7 +31,6 @@ const App = () => (
             </MuiThemeProvider>
           {/* </Provider> */}
         </BrowserRouter>
->>>>>>> master
       </div>
 );
 
