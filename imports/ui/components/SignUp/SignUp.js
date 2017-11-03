@@ -7,6 +7,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import MenuItem from 'material-ui/MenuItem';
+
 import './styles.css';
 
 const SignUp = () => {
@@ -32,7 +33,6 @@ const SignUp = () => {
                   </div>
                 </div>
               <div>
-                
               </div>
                 <div>
                   <RaisedButton className="enterButton" primary fullWidth type="submit">
@@ -47,5 +47,8 @@ const SignUp = () => {
   )
 };
 
+SignUp.propTypes = {
+  
+};
 
 export default SignUp;
