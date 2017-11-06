@@ -49,18 +49,14 @@ class CreateIdea extends Component {
                 onChange={this.handleChange}
                 /><br />
                 <div>
-                <RaisedButton
-                    containerElement='label' // <-- Just add me!
-                    label="Upload image" >
                     <input type="file"
                         name="picture"
                         value={this.state.picture}
                         onChange={this.handleChange}
                     />
-                </RaisedButton>
                 </div>
                 {/* <RaisedButton label="SUBMIT IDEA" secondary={true} /> */}
-                <button type="submit" onClick={this.handleSubmit}>Submit</button>
+                <RaisedButton type="submit" label="SUBMIT IDEA" secondary={true} onClick={this.handleSubmit}/>
             </form>   
         )
     }
