@@ -24,7 +24,7 @@ const CreateIdea = () => (
       multiLine={true}
       rows={2}
     /><br />
-    <RaisedButton label="Profile" secondary={true} style={style} />
+    <RaisedButton label="Profile" secondary={true} />
   </div>
 );
 
