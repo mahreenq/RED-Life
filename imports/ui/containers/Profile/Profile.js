@@ -7,8 +7,7 @@ const Profile = ({ user }) => {
       <div className="caption">
         <h3>{user.name}</h3>
         <ul className="list-group">
-          <li className="list-group-item">Email: {user.email}</li>
-          <li className="list-group-item">Phone: {user.phone}</li>
+          <li className="list-group-item">Course: {user.course}</li>
         </ul>
       </div>
     </div>
