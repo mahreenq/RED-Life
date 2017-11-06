@@ -1,30 +1,31 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import './styles';
 
 const CreateIdea = () => (
-  <div>
+  <div className="create_idea idea_form">
     <TextField
-      hintText="Hint Text"
+      hintText="Title"
       errorText="This field is required"
     /><br />
+    
     <TextField
-      hintText="Hint Text"
-      errorText="The error text can be as long as you want, it will wrap."
-    /><br />
-    <TextField
-      hintText="Hint Text"
-      errorText="This field is required"
-      floatingLabelText="Floating Label Text"
-    /><br />
-    <TextField
-      hintText="Message Field"
+      hintText="Description"
       errorText="This field is required."
-      floatingLabelText="MultiLine and FloatingLabel"
+      floatingLabelText="Enter idea description here"
       multiLine={true}
       rows={2}
     /><br />
-    <RaisedButton label="Profile" secondary={true} />
+    <div>
+    <RaisedButton
+        containerElement='label' // <-- Just add me!
+        label="CHOOSE AN IMAGE" >
+        <input type="file" />
+    </RaisedButton>
+    </div>
+    <RaisedButton label="SUBMIT" secondary={true} />
+    
   </div>
 );
 

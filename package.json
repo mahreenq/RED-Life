@@ -9,6 +9,7 @@
     "browser-router": "^0.2.0",
     "faker": "^4.1.0",
     "material-ui": "^0.19.4",
+    "material-ui-upload": "^1.2.1",
     "meteor-node-stubs": "^0.3.2",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
