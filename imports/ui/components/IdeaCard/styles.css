@@ -22,11 +22,11 @@
 }
 
 .ideaImage div {
-    width: 80%;
+    width: 90%;
 }
 
 .ideaImage img {
-    border-radius: 50%;
+    /*border-radius: 50%;*/
 }
 
 .voteButton {

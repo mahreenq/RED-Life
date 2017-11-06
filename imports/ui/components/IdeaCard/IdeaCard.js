@@ -26,9 +26,9 @@ const IdeaCard = ({idea, updateVote, userId}) => {
             <CardMedia className="ideaImage">
                 <img src={idea.avatar} alt="" />
             </CardMedia>
-            <CardHeader titleStyle={styles.header} subtitleStyle={styles.header}
+            <CardHeader
+                titleStyle={styles.header}
                 title={idea.title}
-                subtitle={idea.name}
             />
             <CardText style={styles.description}>
                 {idea.description}
