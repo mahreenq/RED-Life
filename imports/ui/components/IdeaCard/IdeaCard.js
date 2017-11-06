@@ -5,24 +5,31 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 import './styles.css';
 
+const styles = {
+    header: {
+        fontSize: '1rem',
+    },
+    description: {
+        fontSize: '1rem',
+    }
+};
+
 const IdeaCard = ({idea}) => (
     <Card className="ideaCard">
         <CardMedia className="ideaImage">
-            <img src={idea.imageurl} alt="" />
+            <img src={idea.avatar} alt="" />
         </CardMedia>
-        <CardHeader
+        <CardHeader titleStyle={styles.header} subtitleStyle={styles.header}
             title={idea.title}
-            subtitle={idea.author}
+            subtitle={idea.name}
         />
-        <CardText>
+        <CardText style={styles.description}>
             {idea.description}
         </CardText>
         <CardActions>
-            {idea.available ?
-                <div>
-                    <RaisedButton label="Vote" secondary={true} onClick="" />
-                </div>
-                 : ''}
+            <div className="voteButton">
+                <RaisedButton label="Vote" secondary={true} />
+            </div>
         </CardActions>
     </Card>
 );
