@@ -21,4 +21,14 @@ Meteor.methods({
     });
   },
 
+  'ideas.insert': function(){
+    return Ideas.insert({
+      createdAt: new Date(),
+      name: 'John Doe in the house',
+      description: '',
+      title: 'Stuff n things',
+      avatar: '',
+      votes: []
+    })
+  }
 });
