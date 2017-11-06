@@ -15,12 +15,19 @@ class IdeaContainer extends Component {
         //this.props.dispatch(fetchItemsAndUsers(tagValues, profileId));
     }
 
+    updateVote(idea) {
+        Meteor.call('ideas.updateVote', idea);
+    }
+
     render() {
         let ideaData = this.props.ideas;
 
+        let userId = "Q7vvLzhLisYLvTxNM";
+        //let userId = "jseYJYs5noehs8wXC";
+
         return (
             <Idea
-                ideaData={ideaData}
+                ideaData={ideaData} updateVote={this.updateVote} userId={userId}
             />
         );
     }
