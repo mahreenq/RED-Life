@@ -10,7 +10,7 @@ import muiTheme from '../imports/ui/config/theme';
 import Idea from '../imports/ui/containers/IdeaContainer';
 import Login from '../imports/ui/containers/LoginContainer';
 import SignUp from '../imports/ui/containers/SignUpContainer';
-import Profile from '../imports/ui/containers/Profile';
+import Users from '../imports/ui/containers/Profile';
 import CreateIdea from '../imports/ui/containers/CreateIdea';
 
 const App = () => (
@@ -23,7 +23,7 @@ const App = () => (
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/signup" component={SignUp} />
                   <Route exact path="/idea" component={Idea} />
-                  <Route exact path="/profile" component={Profile} />
+                  <Route exact path="/users" component={Users} />
                   <Route exact path="/createidea" component={CreateIdea} />
       
                   {/* <Route path="/profile/:userid" component={Profile} /> */}

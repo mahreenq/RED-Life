@@ -20,11 +20,11 @@ const CreateIdea = () => (
     <div>
     <RaisedButton
         containerElement='label' // <-- Just add me!
-        label="CHOOSE AN IMAGE" >
+        label="Upload image" >
         <input type="file" />
     </RaisedButton>
     </div>
-    <RaisedButton label="SUBMIT" secondary={true} />
+    <RaisedButton label="SUBMIT IDEA" secondary={true} />
     
   </div>
 );
