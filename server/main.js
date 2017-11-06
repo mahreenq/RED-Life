@@ -3,7 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { Users } from '../imports/collections/users';
 import { Ideas } from '../imports/collections/ideas';
 import _ from 'lodash';
-import { image, helpers, lorem } from 'faker';
+import { image, helpers, lorem, commerce } from 'faker';
 
 Meteor.startup(() => {
   //Generate Data, but also check to see if data exists first
@@ -17,8 +17,7 @@ Meteor.startup(() => {
       Users.insert({
         //Saves data to mongodb using Meteor
         name: name,
-        email: email,
-        phone: phone,
+        course: commerce.department(),
         avatar: image.avatar() //generates an img url
       });
     });
@@ -40,7 +39,7 @@ Meteor.startup(() => {
   //See if collection has any records
   const numberRecordsIdeas = Ideas.find({}).count();
   if (!numberRecordsIdeas) {
-    _.times(5, () => {
+    _.times(10, () => {
       //Runs this code 5 times
       const { name, description, title } = helpers.createCard(); //generates a full profile from faker library
 
@@ -49,7 +48,8 @@ Meteor.startup(() => {
         name: name,
         description: lorem.sentences(),
         title: lorem.words(),
-        avatar: image.avatar() //generates an img url
+        avatar: image.avatar(), //generates an img url
+        votes: []
       });
     });
   }
