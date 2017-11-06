@@ -2,37 +2,28 @@ import React, { Component } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Users } from '../../../collections/users.js';
 import Profile from './Profile.js';
+import PropTypes from 'prop-types';
+import { Meteor } from 'meteor/meteor';
+
 
 const PER_PAGE = 20;
 
-class UserList extends Component {
-  //props.employees is an array of employee objects
-  constructor() {
-    super();
-  }
 
-//   componentWillMount() {
-//     this.page = 1;
-//   }
 
-  handleButtonClick() {
-    Meteor.subscribe('users', PER_PAGE * (this.page + 1));
-    this.page += 1;
-  }
+class ProfileContainer extends Component {
+
 
   render() {
-    return (
+      let profileData = this.props.users;
 
-        <div className="users-list">
-          {this.props.users.map(user => (
-            <Profile key={user._id} user={user} />
-          ))}
-        </div>
-        
-
-    );
+      return (
+          <Profile profileData={profileData} />
+      );
   }
 }
+
+
+
 export default createContainer(() => {
   //setup subscription, pass in the publications name
   Meteor.subscribe('users', PER_PAGE); //Whatever is available from the publication will be returned here
@@ -40,4 +31,11 @@ export default createContainer(() => {
   return {
     users: Users.find({}).fetch()
   }; //We need to call fetch() that will invoke the cursor to actually execute the query
-}, UserList);
+}, ProfileContainer);
+
+
+{/* <div className="users-list">
+{this.props.users.map(user => (
+  <Profile key={user._id} user={user} />
+))}
+</div> */}

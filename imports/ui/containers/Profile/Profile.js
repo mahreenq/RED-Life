@@ -1,17 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Profile = ({ user }) => {
-  return (
-    <div className="thumbnail">
-      <img src={user.avatar} />
-      <div className="caption">
-        <h3>{user.name}</h3>
-        <ul className="list-group">
-          <li className="list-group-item">Course: {user.course}</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
+import './styles.css';
+
+import ProfileCardList from '../../components/ProfileCardList';
+
+const Profile = ({profileData}) => {
+    return (
+        <div >
+            {profileData !== undefined && profileData.length > 0 ?
+                <div>
+                    <ProfileCardList profileData={profileData} />
+                </div>
+            : ''}
+        </div>
+    );
+}
+
+// Profile.propTypes = {
+
+// };
 
 export default Profile;

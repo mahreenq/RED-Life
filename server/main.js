@@ -12,13 +12,14 @@ Meteor.startup(() => {
   if (!numberRecords) {
     _.times(10, () => {
       //Runs this code 10 times
-      const { name, email, phone } = helpers.createCard(); //generates a full profile from faker library
+      const { name, course, avatar, description } = helpers.createCard(); //generates a full profile from faker library
 
       Users.insert({
         //Saves data to mongodb using Meteor
         name: name,
         course: commerce.department(),
-        avatar: image.avatar() //generates an img url
+        avatar: image.avatar(), //generates an img url
+        bio: lorem.sentence()
       });
     });
   }
@@ -41,7 +42,7 @@ Meteor.startup(() => {
   if (!numberRecordsIdeas) {
     _.times(10, () => {
       //Runs this code 5 times
-      const { name, description, title } = helpers.createCard(); //generates a full profile from faker library
+      const { name, description, title, avatar, votes } = helpers.createCard(); //generates a full profile from faker library
 
       Ideas.insert({
         //Saves data to mongodb using Meteor
