@@ -49,7 +49,8 @@ Meteor.startup(() => {
         name: name,
         description: lorem.sentences(),
         title: lorem.words(),
-        avatar: image.avatar() //generates an img url
+        avatar: image.avatar(), //generates an img url
+        votes: []
       });
     });
   }
