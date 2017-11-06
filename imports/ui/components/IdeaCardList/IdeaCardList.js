@@ -8,7 +8,7 @@ import IdeaCard from '../IdeaCard';
 const IdeaCardList = ({ideaData}) => (
     <div className="ideaCardList">
         {ideaData.map(idea =>
-            <IdeaCard key={idea.id} idea={idea} />
+            <IdeaCard key={idea._id} idea={idea} />
         )}
     </div>
 );

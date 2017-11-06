@@ -1,6 +1,7 @@
 .ideaCard {
     width: 98%;
     margin: 1%;
+    padding: 1rem 0 1rem 0;
 }
 
 @media only screen and (min-width: 600px) {
@@ -15,6 +16,19 @@
     }
 }
 
+.ideaImage {
+    display: flex;
+    justify-content: center;
+}
+
+.ideaImage div {
+    width: 80%;
+}
+
 .ideaImage img {
     border-radius: 50%;
+}
+
+.voteButton {
+    text-align: center;
 }
