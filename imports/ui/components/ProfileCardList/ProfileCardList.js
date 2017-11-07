@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import './styles.css';
+
 import ProfileCard from '../ProfileCard';
-
-
 
 const ProfileCardList = ({profileData}) => (
     <div className="profileCardList">
