@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
-import { Users } from '../../../collections/users.js';
+import { Profiles } from '../../../collections/profiles';
 import Profile from './Profile.js';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';

@@ -1,20 +1,20 @@
-import { Meteor } from 'meteor/meteor'
-import React, { Component } from 'react';
-import { withRouter } from 'react-router';
-import { connect } from 'react-redux';
-import Login from '../../components/Login/Login';
+// import { Meteor } from 'meteor/meteor'
+// import React, { Component } from 'react';
+// import { withRouter } from 'react-router';
+// import { connect } from 'react-redux';
+// import Login from '../../components/Login/Login';
 
-class LoginContainer extends Component {
+// class LoginContainer extends Component {
   
-  render() {
+//   render() {
 
-    return (
-      <div>
-        <Login />
-      </div>
-    );
-  }
-}
+//     return (
+//       <div>
+//         <Login />
+//       </div>
+//     );
+//   }
+// }
 
 
-export default LoginContainer;
+// export default LoginContainer;
