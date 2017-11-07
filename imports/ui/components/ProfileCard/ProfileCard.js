@@ -32,7 +32,6 @@ const ProfileCard = ({user}) => (
         <CardText style={styles.description}>
             {`Bio:  ${user.bio}`}
         </CardText>
- 
     <CardMedia
       overlay={<CardTitle title={user.name} subtitle={`Enrolled in ${user.course}`}  />}
     >

@@ -1,4 +1,3 @@
-import Login from '../../components/Login/Login.js';
-import LoginContainer from './LoginContainer';
+import Login from './Login';
 
-export default LoginContainer;
+export default Login;
