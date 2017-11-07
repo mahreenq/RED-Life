@@ -17,7 +17,7 @@ class Footer extends Component {
       <Paper zDepth={1}>
         <BottomNavigation>
           <BottomNavigationItem
-            label="Copyright stuff"
+            label="Copyright &copy; 2017 Events"
             icon={recentsIcon}
           />
         </BottomNavigation>
