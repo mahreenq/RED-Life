@@ -13,6 +13,7 @@ const styles = {
 };
 
 const ProfileCard = ({user}) => (
+  //const logged_in_user = Meteor.userId();
     <Card className="profileCard">
         <CardMedia className="profileImage"
             overlay={
@@ -30,10 +31,16 @@ const ProfileCard = ({user}) => (
         <CardText style={styles.description}>
             {`Bio:  ${user.bio}`}
         </CardText>
+ 
+    <CardMedia
+      overlay={<CardTitle title={user.name} subtitle={`Enrolled in ${user.course}`}  />}
+    >
+      <img src={user.avatar} alt="" />
+    </CardMedia>
+    <CardTitle  subtitle={`Bio:  ${user.bio}`} />
 
     <CardActions>
-      <FlatButton label="View Profile" />
-
+      <a href={user._id}><FlatButton label="View Profile" /></a>
     </CardActions>
   </Card>
 );
