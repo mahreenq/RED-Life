@@ -7,8 +7,8 @@ import FlatButton from 'material-ui/FlatButton';
 import './styles.css';
 
 
-
 const ProfileCard = ({user}) => (
+  //const logged_in_user = Meteor.userId();
     <Card className="profileCard">
  
     <CardMedia
@@ -17,10 +17,11 @@ const ProfileCard = ({user}) => (
       <img src={user.avatar} alt="" />
     </CardMedia>
     <CardTitle  subtitle={`Bio:  ${user.bio}`} />
+  
+      <p>${user._id}</p> 
  
     <CardActions>
-      <FlatButton label="View Profile" />
-
+      <a href={user._id}><FlatButton label="View Profile" /></a>
     </CardActions>
   </Card>
 );
