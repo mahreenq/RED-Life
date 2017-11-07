@@ -7,9 +7,9 @@ import ProfileCardList from '../../components/ProfileCardList';
 
 const Profile = ({profileData}) => {
     return (
-        <div >
+        <div className="appProfileContent">
             {profileData !== undefined && profileData.length > 0 ?
-                <div>
+                <div className="appProfile">
                     <ProfileCardList profileData={profileData} />
                 </div>
             : ''}
