@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import {createContainer} from 'meteor/react-meteor-data';
+import {Ideas} from '../../../collections/ideas';
+
 import './styles';
 
 class CreateIdea extends Component {
@@ -18,12 +21,13 @@ class CreateIdea extends Component {
         this.setState({
             [event.target.name]: event.target.value,
         })
-        console.log(this.state);
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state)
+        console.log(1);
+        Meteor.call('ideas.insert', this.state)
+        console.log('id', this.props.ideas);
     }
 
     render(){
@@ -62,4 +66,9 @@ class CreateIdea extends Component {
     }
 };
 
-export default CreateIdea;
+export default createContainer(() => {
+    Meteor.subscribe('ideas');
+    return {
+        ideas: Ideas.find({}).fetch()
+    }
+}, CreateIdea);
