@@ -12,12 +12,14 @@ const PER_PAGE = 20;
 
 class ProfileContainer extends Component {
 
-
   render() {
       let profileData = this.props.users;
 
       return (
+        
           <Profile profileData={profileData} />
+          
+        
       );
   }
 }
