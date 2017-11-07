@@ -7,7 +7,7 @@ Meteor.startup(() => {
     return Ideas.find({});
   })
   Meteor.publish('profiles', function() {
-    return Users.find({});
+    return Profiles.find({});
   })
 });
 

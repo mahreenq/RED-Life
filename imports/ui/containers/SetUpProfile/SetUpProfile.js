@@ -72,7 +72,7 @@ class SetUpProfile extends Component{
           </div>
 
           <div>
-          <RaisedButton type="submit" label="SUBMIT IDEA" secondary={true} onClick={this.handleSubmit}/>
+          <RaisedButton type="submit" label="SUBMIT Profile info" secondary={true} onClick={this.handleSubmit}/>
           </div>
         </form>
       )

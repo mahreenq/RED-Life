@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {createContainer} from 'meteor/react-meteor-data';
 import {Card, CardActions, CardHeader, CardText, CardMedia} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
+import {Ideas} from '../../../collections/ideas';
 
 import './styles.css';
 
@@ -14,32 +16,32 @@ const styles = {
     }
 };
 
-const IdeaCard = ({idea, updateVote, userId}) => {
-    let voted = false;
+const IdeaCard = (Ideas) => {
+    // let voted = false;
 
-    if (idea.votes.find((vote) => vote === userId)) {
-        voted = true;
-    }
+    // if (Ideas.idea.votes.find((vote) => vote === userId)) {
+    //     voted = true;
+    // }
 
     return (
         <Card className="ideaCard">
             <CardMedia className="ideaImage">
-                <img src={idea.avatar} alt="" />
+                <img src="/images/grumpy_Cat.jpg" alt="" />
             </CardMedia>
             <CardHeader
                 titleStyle={styles.header}
-                title={idea.title}
+                title={Ideas.idea.title}
             />
             <CardText style={styles.description}>
-                {idea.description}
+                {Ideas.idea.description}
             </CardText>
             <CardActions>
                 <div className="voteButton">
                     <RaisedButton
                         label="Vote"
                         secondary={true}
-                        disabled={voted}
-                        onClick={updateVote}
+                        /* disabled={voted}
+                        onClick={updateVote} */
                     />
                 </div>
             </CardActions>
