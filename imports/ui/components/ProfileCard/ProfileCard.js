@@ -31,13 +31,6 @@ const ProfileCard = ({user}) => (
         <CardText style={styles.description}>
             {`Bio:  ${user.bio}`}
         </CardText>
- 
-    <CardMedia
-      overlay={<CardTitle title={user.name} subtitle={`Enrolled in ${user.course}`}  />}
-    >
-      <img src={user.avatar} alt="" />
-    </CardMedia>
-    <CardTitle  subtitle={`Bio:  ${user.bio}`} />
 
     <CardActions>
       <a href={user._id}><FlatButton label="View Profile" /></a>
