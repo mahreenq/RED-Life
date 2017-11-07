@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
+import { Link } from 'react-router-dom';
 
 import './styles.css';
 
@@ -31,10 +32,17 @@ const ProfileCard = ({user}) => (
         <CardText style={styles.description}>
             {`Bio:  ${user.bio}`}
         </CardText>
-
-    <CardActions>
-      <a href={user._id}><FlatButton label="View Profile" /></a>
-    </CardActions>
+    <CardMedia
+      overlay={<CardTitle title={user.name} subtitle={`Enrolled in ${user.course}`}  />}
+    >
+      <img src={user.avatar} alt="" />
+    </CardMedia>
+    <CardTitle  subtitle={`Bio:  ${user.bio}`} />
+    <Link to={user._id}>
+        <CardActions>
+            <FlatButton label="View Profile" />
+        </CardActions>
+    </Link>
   </Card>
 );
 
