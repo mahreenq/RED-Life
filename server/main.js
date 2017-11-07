@@ -1,10 +1,13 @@
 import { Meteor } from 'meteor/meteor';
 import { Ideas } from '../imports/collections/ideas';
+import { Profiles } from '../imports/collections/profiles';
 
 Meteor.startup(() => {
-  console.log(3);
   Meteor.publish('ideas', function() {
     return Ideas.find({});
+  })
+  Meteor.publish('profiles', function() {
+    return Users.find({});
   })
 });
 

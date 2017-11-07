@@ -2,7 +2,6 @@ import {Mongo} from 'meteor/mongo';
 
 Meteor.methods({
   'ideas.insert' (idea){
-    console.log(idea);
     return Ideas.insert({
       
       title: idea.title,
