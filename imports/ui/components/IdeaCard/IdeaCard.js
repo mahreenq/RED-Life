@@ -16,12 +16,12 @@ const styles = {
     }
 };
 
-const IdeaCard = ({idea, updateVote}) => {
+const IdeaCard = ({idea, updateVote, userId}) => {
     let voted = false;
 
-    // if (Ideas.idea.votes.find((vote) => vote === this.userId)) {
-    //     voted = true;
-    // }
+    if (idea.votes.find((vote) => vote === userId)) {
+        voted = true;
+    }
 
     return (
         <Card className="ideaCard">

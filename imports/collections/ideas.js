@@ -6,25 +6,22 @@ Meteor.methods({
 
           title: idea.title,
           description: idea.description,
-          picture: idea.picture
+          picture: idea.picture,
+          votes: []
 
         })
     },
 
     'ideas.updateVote' (idea) {
-
         // if (idea.owner !== this.userId) {
         //   throw new Meteor.Error('todos.toggleComplete.not-authorized',
-        //     'You are nsot allowed to update to-dos for other users.');
+        //     'You are not allowed to update to-dos for other users.');
         // }
 
-        //let userId = "Q7vvLzhLisYLvTxNM";
-        //let userId = "jseYJYs5noehs8wXC";
-
-        // Ideas.update(idea._id, {
-        //   //$set: { votes: this.userId },
-        //   $push: { votes: userId },
-        // });
+        Ideas.update(idea._id, {
+          //$set: { votes: this.userId },
+          $push: { votes: this.userId },
+        });
     }
 })
 
