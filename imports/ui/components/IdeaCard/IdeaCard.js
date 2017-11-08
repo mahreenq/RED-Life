@@ -16,10 +16,12 @@ const styles = {
     }
 };
 
-const IdeaCard = (Ideas) => {
-    // let voted = false;
+const IdeaCard = (idea, updateVote) => {
+    let voted = false;
+    console.log(idea.idea);
+    console.log(updateVote);
 
-    // if (Ideas.idea.votes.find((vote) => vote === userId)) {
+    // if (Ideas.idea.votes.find((vote) => vote === this.userId)) {
     //     voted = true;
     // }
 
@@ -30,18 +32,18 @@ const IdeaCard = (Ideas) => {
             </CardMedia>
             <CardHeader
                 titleStyle={styles.header}
-                title={Ideas.idea.title}
+                title={idea.idea.title}
             />
             <CardText style={styles.description}>
-                {Ideas.idea.description}
+                {idea.idea.description}
             </CardText>
             <CardActions>
                 <div className="voteButton">
                     <RaisedButton
                         label="Vote"
                         secondary={true}
-                        /* disabled={voted}
-                        onClick={updateVote} */
+                        disabled={voted}
+                        onClick={updateVote}
                     />
                 </div>
             </CardActions>
