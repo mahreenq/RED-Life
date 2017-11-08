@@ -1,21 +1,25 @@
-.profileCard{
+.userCard{
     width: 98%;
     margin: 1%;
     padding: 1rem;
 }
 
 @media only screen and (min-width: 600px) {
-    .profileCard {
+    .userCard {
         width: 48%;
     }
 }
 
 @media only screen and (min-width: 960px) {
-    .profileCard {
+    .userCard {
         width: 31%;
     }
 }
 
-.profileImage img {
-    min-width: 100%;
+.userImage img {
+    width: 100%;
+}
+
+.viewButton {
+    text-align: center;
 }

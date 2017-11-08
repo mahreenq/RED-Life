@@ -16,15 +16,30 @@ const styles = {
 };
 
 const UserCard = ({user}) => {
+        let course = '';
+        let bio = '';
+
+        if (user.course !== undefined) {
+            course = user.course;
+        } else {
+            course = 'unknown';
+        }
+
+        if (user.bio !== undefined) {
+            bio = user.bio;
+        } else {
+            bio = 'None';
+        }
+
         return (
         //const logged_in_user = Meteor.userId();
-            <Card className="profileCard">
-                <CardMedia className="profileImage"
+            <Card className="userCard">
+                <CardMedia className="userImage"
                     overlay={
                         <CardTitle
-                            className="profileTitle"
+                            className="userTitle"
                             title={user.name}
-                            subtitle={`Enrolled in ${user.course}`}
+                            subtitle={`Enrolled in ${course}`}
                         />
                     }
                 >
@@ -33,17 +48,13 @@ const UserCard = ({user}) => {
                     </div>
                 </CardMedia>
                 <CardText style={styles.description}>
-                    {`Bio:  ${user.bio}`}
+                    {`Bio:  ${bio}`}
                 </CardText>
-            <CardMedia
-            overlay={<CardTitle title={user.name} subtitle={`Enrolled in ${user.course}`}  />}
-            >
-            <img src={user.avatar} alt="" />
-            </CardMedia>
-            <CardTitle  subtitle={`Bio:  ${user.bio}`} />
             <Link to={user._id}>
                 <CardActions>
-                    <FlatButton label="View Profile" />
+                    <div className="viewButton">
+                        <FlatButton label="View Profile" />
+                    </div>
                 </CardActions>
             </Link>
         </Card>
@@ -51,3 +62,10 @@ const UserCard = ({user}) => {
 };
 
 export default UserCard;
+
+// <CardMedia
+// overlay={<CardTitle title={user.name} subtitle={`Enrolled in ${user.course}`}  />}
+// >
+// <img src={user.avatar} alt="" />
+// </CardMedia>
+//<CardTitle  subtitle={`Bio:  ${user.bio}`} />
