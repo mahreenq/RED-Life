@@ -26,13 +26,11 @@ class SetUpProfile extends Component{
     this.setState({
         [event.target.name]: event.target.value,
     })
-    console.log(this.state)
   }
 
   handleSubmit = (event) => {
       event.preventDefault();
       Meteor.call('profiles.update', this.state)
-      console.log(this.state)
   }
 
   render(){
