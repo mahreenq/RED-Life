@@ -1,46 +1,70 @@
-#login-buttons{    
-    display:flex;
-    justify-content: center;
-    align-items: flex-start;
-    font-family: 'Roboto', sans-serif;
-    font-size: 15px;;
-    /* box-shadow: 1px 1px 5px #ccc; */
+#login-buttons{
+    box-shadow: 1px 1px 5px #ccc;
     padding:2rem;
+    width: 600px;
+    z-index: 15;
+    position: relative;
+    background: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    border-radius: 4px;
+    box-shadow: 0 0 30px rgba(#000, .1);
+    box-sizing: border-box;
+    margin: 100px auto 10px;
+    overflow: hidden;
 }
+
 .container{
     margin: auto;
     padding: 2rem;
+    background: #e52d27;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #b31217, #e52d27);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #b31217, #e52d27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
 }
 
 #login-sign-in-link{
-    visibility: visible !important;
-    height:auto;
+    padding:0.75rem 0;
 }
 
-/* #login-dropdown-list, .accounts-dialog{
-    visibility: visible !important;
-    height:auto;
-} */
+.login-link-text{
+    display: block;
+    color: #e1231a;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+}
+
 
 .login-close-text{
     display: none;
 }
 
 .login-form, .login-password-form{
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin:1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
 }
 
 /* Email */
 /* */
 #login-email-label-and-input{
+    margin:2rem 0 0 0;
     padding:1rem 0 0.5rem 0;
+    width:250px;
 }
 
 #login-email-label-and-input #login-email-label{
-    color:
+    display: block;
+    margin: 0 0 10px;
+    color: #666;
+    font-size: 12px;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .2em;
 }
 
 #login-email-label-and-input #login-email{
@@ -52,12 +76,24 @@
     outline: 0;
     background: transparent;
     border-bottom: 1px solid black;
+    transition: 0.3s ease;
 }
 
 /* Password */
 #login-password-label-and-input{
+    margin:2rem 0 0 0;
     padding:1rem 0 1rem 0;
-    
+    width:250px;
+}
+
+#login-password-label-and-input #login-password-label{
+    display: block;
+    margin: 0 0 10px;
+    color: #666;
+    font-size: 12px;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .2em;
 }
 
 #login-password-label-and-input #login-password{
@@ -69,10 +105,29 @@
     outline: 0;
     background: transparent;
     border-bottom: 1px solid black;
+    transition: 0.3s ease;
 }
 
 /* Sign In Button */
 .login-button, .login-button-form-submit{
+    text-align: center;
+    margin:1rem 0;
+    background-color: transparent;
+    padding: 10px;
+    font-size: 1rem;
+    width: 95%;
+    border: none;
+    color: #000;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e1231a;
+}
+
+.login-button:hover, .login-button-form-submit:hover{
     text-align: center;
     margin:1rem 0;
     background: #e1231a;
@@ -84,6 +139,75 @@
     border-radius: 5px;
     cursor: pointer;
     text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+
+/* Create Account */
+#signup-link{
+    cursor: pointer;
+    display: block;
+    margin: 1.5rem 0 0 0;
+    color: #666;
+    font-size: 12px;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+}
+
+
+/* forgot-password-link */
+#forgot-password-link{
+    cursor: pointer;
+    display: block;
+    margin: 1.5rem 0 0 0;
+    color: #666;
+    font-size: 12px;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    text-decoration: underline;
+}
+
+/* back-to-login-link */
+#back-to-login-link{
+    cursor: pointer;
+    display: block;
+    margin: 1.5rem 0 0 0;
+    color: #666;
+    font-size: 12px;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+}
+
+/* Forgot Password */
+#forgot-password-email-label-and-input{
+    margin:2rem 0 0 0;
+    padding:1rem 0 1rem 0;
+    width:600px;
+}
+
+#forgot-password-email-label-and-input #forgot-password-email-label{
+    display: block;
+    margin: 0 0 10px;
+    color: #666;
+    font-size: 12px;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+}
+
+#forgot-password-email-label-and-input #forgot-password-email{
+    width:100%;
+    padding: 5px 0;
+    margin: 10px 0;
+    font-size: 15px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+    transition: 0.3s ease;
 }
 
 
