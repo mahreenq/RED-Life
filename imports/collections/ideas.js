@@ -12,12 +12,12 @@ Meteor.methods({
         })
     },
 
-    'ideas.updateVote' (idea) {
+    'ideas.addVote' (idea) {
         Ideas.update(idea._id, {
           $push: { votes: this.userId },
         });
     },
-
+    
     'ideas.removeVote' (idea) {
         Ideas.update(idea._id, {
           $pull: { votes: this.userId },
