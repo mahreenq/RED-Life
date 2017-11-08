@@ -4,7 +4,7 @@ import './styles.css';
 import { BrowserRouter ,Route,Link, Switch } from 'react-router-dom';
 import IdeaCard from '../IdeaCard';
 
-const IdeaCardList = ({ideaData, updateVote, userId}) => (
+const IdeaCardList = ({ideaData, addVote, removeVote, userId}) => (
     <div>
 
         <div className="ideasHeader">
@@ -20,7 +20,8 @@ const IdeaCardList = ({ideaData, updateVote, userId}) => (
                 <IdeaCard
                     key={idea._id}
                     idea={idea}
-                    updateVote={updateVote.bind(this, idea)}
+                    addVote={addVote.bind(this, idea)}
+                    removeVote={removeVote.bind(this, idea)}
                     userId={userId}
                 />
             )}
