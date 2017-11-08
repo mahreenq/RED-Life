@@ -8,7 +8,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import muiTheme from '../imports/ui/config/theme';
 import Idea from '../imports/ui/containers/IdeaContainer';
-import Users from '../imports/ui/containers/Profile';
+import Users from '../imports/ui/containers/UsersContainer';
 import CreateIdea from '../imports/ui/containers/CreateIdea';
 import SetUpProfile from '../imports/ui/containers/SetUpProfile';
 import AccountsUIWrapper from '../imports/ui/components/AccountsWrapper/index';
