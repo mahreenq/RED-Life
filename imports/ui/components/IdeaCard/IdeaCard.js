@@ -23,17 +23,23 @@ const IdeaCard = ({idea, updateVote, userId}) => {
         voted = true;
     }
 
+    let titleColor = "red";
+
     return (
         <Card className="ideaCard">
             <CardMedia className="ideaImage">
                 <img src="/images/grumpy_Cat.jpg" alt="" />
             </CardMedia>
             <CardHeader
-                titleStyle={styles.header}
                 title={idea.title}
+                titleColor={titleColor}
+                titleStyle={styles.header}
             />
             <CardText style={styles.description}>
                 {idea.description}
+            </CardText>
+            <CardText className="voteCount" style={styles.description}>
+                Vote Count: <span>{idea.votes.length}</span>
             </CardText>
             <CardActions>
                 <div className="voteButton">
