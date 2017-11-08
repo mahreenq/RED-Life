@@ -15,12 +15,13 @@
 }
 
 .container{
-    margin: auto;
-    padding: 2rem;
+    margin:auto;
+    /* padding: 2rem; */
+    padding: 2rem 2rem 9rem 2rem;
     background: #e52d27;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #b31217, #e52d27);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #b31217, #e52d27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
+    background: -webkit-linear-gradient(to top, #b31217, #e1231a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #b31217, #e1231a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* border-top:2px solid #fff; */
 }
 
 #login-sign-in-link{
@@ -148,15 +149,16 @@
     cursor: pointer;
     display: block;
     margin: 1.5rem 0 0 0;
-    color: #666;
+    color: #e1231a;
     font-size: 12px;
+    font-weight:800;
     line-height: 1;
     text-transform: uppercase;
     letter-spacing: .2em;
 }
 
 
-/* forgot-password-link */
+/* Forgot Password */
 #forgot-password-link{
     cursor: pointer;
     display: block;
@@ -169,7 +171,7 @@
     text-decoration: underline;
 }
 
-/* back-to-login-link */
+/* Back to Login */
 #back-to-login-link{
     cursor: pointer;
     display: block;
@@ -210,6 +212,43 @@
     transition: 0.3s ease;
 }
 
+/* Change Password */
+#login-dropdown-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+}
+
+/* login-old-password-label-and-input */
+
+#login-old-password-label-and-input{
+    margin:2rem 0 0 0;
+    padding:1rem 0 1rem 0;
+    width:250px;
+}
+
+#login-old-password-label-and-input #login-old-password-label{
+    display: block;
+    margin: 0 0 10px;
+    color: #666;
+    font-size: 12px;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+}
+
+#login-old-password-label-and-input #login-old-password{
+    width:100%;
+    padding: 5px 0;
+    margin: 10px 0;
+    font-size: 15px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+    transition: 0.3s ease;
+}
 
 
 
