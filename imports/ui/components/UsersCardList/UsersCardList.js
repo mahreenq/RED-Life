@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './styles.css';
 
-import ProfileCard from '../ProfileCard';
+import ProfileCard from '../UserCard';
 
 const ProfileCardList = ({profileData}) => {
     return (

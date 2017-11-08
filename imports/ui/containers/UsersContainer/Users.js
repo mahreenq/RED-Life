@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './styles.css';
 
-import ProfileCardList from '../../components/ProfileCardList';
+import ProfileCardList from '../../components/UsersCardList';
 
 const Profile = ({profileData}) => {
     return (
@@ -16,11 +16,5 @@ const Profile = ({profileData}) => {
         </div>
     );
 }
-
-
-
-// Profile.propTypes = {
-
-// };
 
 export default Profile;
