@@ -1,3 +1,3 @@
-import ProfileContainer from './UsersContainer';
+import UsersContainer from './UsersContainer';
 
-export default ProfileContainer;
+export default UsersContainer;

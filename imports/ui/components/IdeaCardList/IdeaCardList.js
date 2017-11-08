@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import './styles.css';
 
 import IdeaCard from '../IdeaCard';
-//updateVote={updateVote.bind(this, idea)}
 
 const IdeaCardList = ({ideaData, updateVote, userId}) => (
     <div className="ideaCardList">
