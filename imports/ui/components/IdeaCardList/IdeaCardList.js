@@ -2,16 +2,34 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
 import { BrowserRouter ,Route,Link, Switch } from 'react-router-dom';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import RaisedButton from 'material-ui/RaisedButton';
 import IdeaCard from '../IdeaCard';
+
+
+const styles = {
+    header: {
+        color: '#e1231a',
+        textAlign: 'center',
+    },
+    subtitle: {
+        textAlign: 'center',
+        color: 'black',
+    }
+
+};
+
 
 const IdeaCardList = ({ideaData, updateVote, userId}) => (
     <div>
 
         <div className="ideasHeader">
-            <h1 className="redFont nmrgin0" > TAKE A LOOK THROUGH SOME GREAT IDEAS </h1>
-            <h4 className="margin0"> Make sure to get involved and vote! </h4>
-            <h2> Want to share your own idea? </h2>
-            <h3 className = "submitIdea"> <Link to = '/createidea'> Submit here</Link> </h3>
+        <Card className="ideasHeaderCard">
+            <CardTitle titleStyle={styles.header} title="TAKE A LOOK THROUGH SOME GREAT IDEAS" subtitleStyle = {styles.subtitle} subtitle="Make sure to get involved and vote!" />
+            <CardActions>
+                <Link to = '/createidea'> <RaisedButton backgroundColor= '#e1231a' labelColor='white' label="SHARE YOUR OWN IDEA HERE" /> </Link> 
+            </CardActions>
+        </Card>
         </div>
 
 

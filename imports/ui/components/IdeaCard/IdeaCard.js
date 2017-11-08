@@ -10,6 +10,8 @@ import './styles.css';
 const styles = {
     header: {
         fontSize: '1rem',
+
+   
     },
     description: {
         fontSize: '1rem',
@@ -30,11 +32,14 @@ const IdeaCard = ({idea, updateVote, userId}) => {
             <CardMedia className="ideaImage">
                 <img src="/images/grumpy_Cat.jpg" alt="" />
             </CardMedia>
+            <div className = "singleIdeaTitle">
             <CardHeader
                 title={idea.title}
                 titleColor={titleColor}
                 titleStyle={styles.header}
+            
             />
+            </div>
             <CardText style={styles.description}>
                 {idea.description}
             </CardText>
