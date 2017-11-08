@@ -10,7 +10,6 @@ import { Meteor } from 'meteor/meteor';
 class ProfileContainer extends Component {
 
   render() {
-    console.log(this.props.profiles)
       let profileData = this.props.profiles;
 
       return (
@@ -25,7 +24,7 @@ class ProfileContainer extends Component {
 
 export default createContainer(() => {
   //setup subscription, pass in the publications name
-  Meteor.subscribe('profiles'); //Whatever is available from the publication will be returned here
+  Meteor.subscribe('users'); //Whatever is available from the publication will be returned here
   //return an object, whatever that is returned will be available on props for this component
   return {
     profiles: Profiles.find({}).fetch()
