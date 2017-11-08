@@ -15,17 +15,26 @@ const styles = {
     },
     description: {
         fontSize: '1rem',
+    },
+    vote: {
+        backgroundColor: 'red',
+    },
+    unvote: {
+        backgroundColor: 'black',
     }
 };
 
-const IdeaCard = ({idea, updateVote, userId}) => {
+const IdeaCard = ({idea, addVote, removeVote, userId}) => {
+    let titleColor = "red";
+    let updateVote = addVote;
+    let buttonLabel = "Vote";
     let voted = false;
 
     if (idea.votes.find((vote) => vote === userId)) {
+        updateVote = removeVote;
+        buttonLabel = "UnVote";
         voted = true;
     }
-
-    let titleColor = "red";
 
     return (
         <Card className="ideaCard">
@@ -49,10 +58,10 @@ const IdeaCard = ({idea, updateVote, userId}) => {
             <CardActions>
                 <div className="voteButton">
                     <RaisedButton
-                        label="Vote"
-                        secondary={true}
-                        disabled={voted}
+                        label={buttonLabel}
                         onClick={updateVote}
+                        backgroundColor={voted ? '#000000' : '#e1231a'}
+                        labelColor='#ffffff'
                     />
                 </div>
             </CardActions>

@@ -6,7 +6,6 @@ import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'mat
 import RaisedButton from 'material-ui/RaisedButton';
 import IdeaCard from '../IdeaCard';
 
-
 const styles = {
     header: {
         color: '#e1231a',
@@ -19,8 +18,8 @@ const styles = {
 
 };
 
+const IdeaCardList = ({ideaData, addVote, removeVote, userId}) => (
 
-const IdeaCardList = ({ideaData, updateVote, userId}) => (
     <div>
 
         <div className="ideasHeader">
@@ -38,7 +37,8 @@ const IdeaCardList = ({ideaData, updateVote, userId}) => (
                 <IdeaCard
                     key={idea._id}
                     idea={idea}
-                    updateVote={updateVote.bind(this, idea)}
+                    addVote={addVote.bind(this, idea)}
+                    removeVote={removeVote.bind(this, idea)}
                     userId={userId}
                 />
             )}
