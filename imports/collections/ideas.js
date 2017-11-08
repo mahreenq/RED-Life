@@ -16,7 +16,16 @@ Meteor.methods({
         Ideas.update(idea._id, {
           $push: { votes: this.userId },
         });
+    },
+
+    'ideas.removeVote' (idea) {
+        Ideas.update(idea._id, {
+          $pull: { votes: this.userId },
+        });
     }
+
 })
 
 export const Ideas = new Mongo.Collection('ideas');
+
+//Meteor.users.update({_id: this.userId}, {$pull: {'profile.experiences': {docId: docId}}});
