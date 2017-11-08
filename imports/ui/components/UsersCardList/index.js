@@ -1,3 +1,3 @@
-import ProfileCardList from './UsersCardList';
+import UserCardList from './UsersCardList';
 
-export default ProfileCardList;
+export default UserCardList;

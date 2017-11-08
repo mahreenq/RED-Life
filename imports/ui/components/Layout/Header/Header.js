@@ -5,11 +5,6 @@ import Button from '../Button';
 
 import './styles.css';
 
-/**
- * A simple example of `AppBar` with an icon on the right.
- * By default, the left icon is a navigation-menu.
- */
-
 const styles = {
     header: {
         backgroundColor: '#e1231a',

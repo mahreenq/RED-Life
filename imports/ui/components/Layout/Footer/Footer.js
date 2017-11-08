@@ -6,11 +6,6 @@ import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
 
 const recentsIcon = <FontIcon className="material-icons"></FontIcon>;
 
-/**
- * A simple example of `BottomNavigation`, with three labels and icons
- * provided. The selected `BottomNavigationItem` is determined by application
- * state (for instance, by the URL).
- */
 class Footer extends Component {
   render() {
     return (

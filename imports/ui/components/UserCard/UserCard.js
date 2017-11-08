@@ -15,7 +15,7 @@ const styles = {
     },
 };
 
-const ProfileCard = ({user}) => {
+const UserCard = ({user}) => {
         return (
         //const logged_in_user = Meteor.userId();
             <Card className="profileCard">
@@ -50,4 +50,4 @@ const ProfileCard = ({user}) => {
         )
 };
 
-export default ProfileCard;
+export default UserCard;

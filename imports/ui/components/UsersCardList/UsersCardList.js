@@ -3,19 +3,15 @@ import PropTypes from 'prop-types';
 
 import './styles.css';
 
-import ProfileCard from '../UserCard';
+import UserCard from '../UserCard';
 
-const ProfileCardList = ({profileData}) => {
+const UsersCardList = ({profileData}) => {
     return (
     <div className="profileCardList">
         {profileData.map(user =>
-            <ProfileCard key={user._id} user={user} />
+            <UserCard key={user._id} user={user} />
         )}
     </div>
 )};
 
-ProfileCardList.propTypes = {
-
-};
-
-export default ProfileCardList;
+export default UsersCardList;

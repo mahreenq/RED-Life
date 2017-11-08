@@ -14,4 +14,3 @@ Meteor.methods({
   })
 
 export const Profiles = Meteor.users;
-console.log(Profiles.find({}).fetch())

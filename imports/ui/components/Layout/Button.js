@@ -9,7 +9,6 @@ const Button = () => (
   <div>
     <RaisedButton label="Login" style={style} />
     <RaisedButton label="Profile" secondary={true} style={style} />
-
   </div>
 );
 

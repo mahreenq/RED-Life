@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 
 import './styles.css';
 
-import ProfileCardList from '../../components/UsersCardList';
+import UsersCardList from '../../components/UsersCardList';
 
-const Profile = ({profileData}) => {
+const Users = ({profileData}) => {
     return (
         <div className="appProfileContent">
 
                 <div className="appProfile">
-                    <ProfileCardList profileData={profileData} />
+                    <UsersCardList profileData={profileData} />
                 </div>
  
         </div>
     );
 }
 
-export default Profile;
+export default Users;
