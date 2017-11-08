@@ -12,7 +12,6 @@ Meteor.methods({
     },
 
     'ideas.updateVote' (idea) {
-        console.log('Hi');
 
         // if (idea.owner !== this.userId) {
         //   throw new Meteor.Error('todos.toggleComplete.not-authorized',
