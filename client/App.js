@@ -8,7 +8,6 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import muiTheme from '../imports/ui/config/theme';
 import Idea from '../imports/ui/containers/IdeaContainer';
-import SignUp from '../imports/ui/containers/SignUpContainer';
 import Users from '../imports/ui/containers/Profile';
 import CreateIdea from '../imports/ui/containers/CreateIdea';
 import SetUpProfile from '../imports/ui/containers/SetUpProfile';
@@ -23,7 +22,6 @@ const App = () => (
                 <Layout>
                   <Route exact path="/login" component={AccountsUIWrapper} />
                   <Route exact path="/setupprofile" component={SetUpProfile} />
-                  <Route exact path="/signup" component={SignUp} />
                   <Route exact path="/idea" component={Idea} />
                   <Route exact path="/users" component={Users} />
                   <Route exact path="/createidea" component={CreateIdea} />
