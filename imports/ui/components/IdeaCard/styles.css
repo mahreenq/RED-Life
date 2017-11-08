@@ -29,6 +29,10 @@
     /*border-radius: 50%;*/
 }
 
+.voteCount span {
+    color: red;
+}
+
 .voteButton {
     text-align: center;
 }
