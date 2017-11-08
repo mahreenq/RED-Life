@@ -21,13 +21,16 @@ class IdeaContainer extends Component {
 
     render() {
         let ideaData = this.props.ideas;
+        //console.log(ideaData);
+        //console.log(this.updateVote);
+        //console.log(this.props.currentUserId);
 
-        let userId = "Q7vvLzhLisYLvTxNM";
+        //let userId = "Q7vvLzhLisYLvTxNM";
         //let userId = "jseYJYs5noehs8wXC";
 
         return (
             <Idea
-                ideaData={ideaData} updateVote={this.updateVote} userId={userId}
+                ideaData={ideaData} updateVote={this.updateVote}
             />
         );
     }
@@ -38,7 +41,9 @@ export default createContainer(() => {
   Meteor.subscribe('ideas', PER_PAGE); //Whatever is available from the publication will be returned here
   //return an object, whatever that is returned will be available on props for this component
   return {
-    ideas: Ideas.find({}).fetch()
+      currentUser: Meteor.user(),
+      currentUserId: Meteor.userId(), // b/c pulling it off above breaks if logged out
+      ideas: Ideas.find({}).fetch()
   }; //We need to call fetch() that will invoke the cursor to actually execute the query
 }, IdeaContainer);
 
