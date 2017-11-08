@@ -1,4 +1,5 @@
 import { Meteor } from 'meteor/meteor';
+import { Accounts } from 'meteor/accounts-base';
 import { Ideas } from '../imports/collections/ideas';
 import { Profiles } from '../imports/collections/profiles';
 
@@ -10,6 +11,73 @@ Meteor.startup(() => {
     return Profiles.find({});
   })
 });
+
+
+
+// Meteor.startup(() => {
+//   let user = {};
+//   let user1 = {};
+//   let user2 = {};
+//   let user3 = {};
+//   let user4 = {};
+
+
+//   if( Meteor.users.find().count() === 0 ) {
+//     user = Accounts.createUser({
+//       email: 'caramelle@elle.com',
+//       password: '123456',
+//       profile: {
+//         name: 'Commissioner Gordon',
+//         course: '035-0365-035-30',
+//         bio: "I like reading",
+//         picture: 'http://s3.amazonaws.com/37assets/svn/765-default-avatar.png'
+        
+//       }
+
+      
+//     });
+//     user1 = Accounts.createUser({
+//       email: 'batman@example.com',
+//       password: '123456',
+//       profile: {
+//         name: 'Bat Man',
+//         course: '035-0365-035-30',
+//         bio: "I like cats",
+//         picture: 'http://s3.amazonaws.com/37assets/svn/765-default-avatar.png'
+//       }
+
+//     });
+//     user2 = Accounts.createUser({
+//       email: 'crablady@example.com',
+//       password: '123456',
+//       profile: {
+//         name: 'Crab Lady',
+//         course: '035-0365-035-30',
+//         bio: "I like music",
+//         picture: 'http://s3.amazonaws.com/37assets/svn/765-default-avatar.png'
+//       }
+
+//     });
+//     user3 = Accounts.createUser({
+//       email: 'totoro@example.com',
+//       password: '123456',
+//       profile: {
+//         name: 'Totoro',
+//         course: '035-0365-035-30',
+//         bio: "I like icecreamg",
+//         picture: 'http://s3.amazonaws.com/37assets/svn/765-default-avatar.png'
+//       }
+
+//     });
+//   }
+
+
+// });
+
+
+
+
+
 
 //   Meteor.publish('sharedBins', function() {
 //     const user = Meteor.users.findOne(this.userId); //returns us the USER object
