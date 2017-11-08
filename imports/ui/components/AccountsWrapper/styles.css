@@ -1,0 +1,91 @@
+#login-buttons{    
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;;
+    /* box-shadow: 1px 1px 5px #ccc; */
+    padding:2rem;
+}
+.container{
+    margin: auto;
+    padding: 2rem;
+}
+
+#login-sign-in-link{
+    visibility: visible !important;
+    height:auto;
+}
+
+/* #login-dropdown-list, .accounts-dialog{
+    visibility: visible !important;
+    height:auto;
+} */
+
+.login-close-text{
+    display: none;
+}
+
+.login-form, .login-password-form{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin:1rem 0;
+}
+
+/* Email */
+/* */
+#login-email-label-and-input{
+    padding:1rem 0 0.5rem 0;
+}
+
+#login-email-label-and-input #login-email-label{
+    color:
+}
+
+#login-email-label-and-input #login-email{
+    width:100%;
+    padding: 5px 0;
+    margin: 10px 0;
+    font-size: 15px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+}
+
+/* Password */
+#login-password-label-and-input{
+    padding:1rem 0 1rem 0;
+    
+}
+
+#login-password-label-and-input #login-password{
+    width:100%;
+    padding: 5px 0;
+    margin: 10px 0;
+    font-size: 15px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+}
+
+/* Sign In Button */
+.login-button, .login-button-form-submit{
+    text-align: center;
+    margin:1rem 0;
+    background: #e1231a;
+    padding: 10px;
+    font-size: 1rem;
+    width: 95%;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+
+
+
