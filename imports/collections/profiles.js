@@ -13,4 +13,5 @@ Meteor.methods({
     }
   })
 
-export const Profiles = new Mongo.Collection('profiles');
+export const Profiles = Meteor.users;
+console.log(Profiles.find({}).fetch())

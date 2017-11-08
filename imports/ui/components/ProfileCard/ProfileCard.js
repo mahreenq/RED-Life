@@ -16,7 +16,6 @@ const styles = {
 };
 
 const ProfileCard = ({user}) => {
-    console.log(user)
         return (
         //const logged_in_user = Meteor.userId();
             <Card className="profileCard">
