@@ -21,9 +21,10 @@ const styles = {
 const Header = () => (
     <Toolbar style={styles.header}>
         <ToolbarGroup firstChild={true}>
+        {location.pathname !== '/login' && location.pathname !== '/setupprofile' ?
             <Link to="/ideas">
                 <img src="/images/red-logo.png" alt="red logo" className="logo" />
-            </Link>
+            </Link> : <img src="/images/red-logo.png" alt="red logo" className="logo" />}
             <ToolbarTitle text="Events" style={styles.title} />
         </ToolbarGroup>
         <ToolbarGroup lastChild={true}>
