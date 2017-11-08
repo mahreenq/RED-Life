@@ -6,13 +6,14 @@ import './styles.css';
 import IdeaCard from '../IdeaCard';
 //updateVote={updateVote.bind(this, idea)}
 
-const IdeaCardList = ({ideaData, updateVote}) => (
+const IdeaCardList = ({ideaData, updateVote, userId}) => (
     <div className="ideaCardList">
         {ideaData.map(idea =>
             <IdeaCard
                 key={idea._id}
                 idea={idea}
                 updateVote={updateVote.bind(this, idea)}
+                userId={userId}
             />
         )}
     </div>

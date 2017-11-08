@@ -21,16 +21,13 @@ class IdeaContainer extends Component {
 
     render() {
         let ideaData = this.props.ideas;
-        //console.log(ideaData);
-        //console.log(this.updateVote);
-        //console.log(this.props.currentUserId);
-
-        //let userId = "Q7vvLzhLisYLvTxNM";
-        //let userId = "jseYJYs5noehs8wXC";
+        let userId = this.props.currentUserId;
 
         return (
             <Idea
-                ideaData={ideaData} updateVote={this.updateVote}
+                ideaData={ideaData}
+                updateVote={this.updateVote}
+                userId={userId}
             />
         );
     }
