@@ -1,0 +1,22 @@
+.header-buttons{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    /* margin-top:-5.5rem; */
+}
+
+.header-profile-button{
+    /* margin: 5rem 0; */
+}
+
+.header-signin-button{
+    /* margin: 5rem 0; */
+}
+
+#toggle {
+    display: none;
+  }
+  
+  #toggle:target {
+    display: block;
+  }
