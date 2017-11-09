@@ -7,9 +7,10 @@
 .appProfile {
   display: flex;
   flex-grow: 1;
-  margin: 0 auto;
+  /*margin: 0 auto;
   max-width: 71rem;
-  width: 100%;
+  width: 100%;*/
+  margin: 0 10% 0 10%;
 
   justify-content: center;
 }

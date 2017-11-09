@@ -2,7 +2,6 @@
     width: 98%;
     margin: 1%;
     padding: 1rem 0 1rem 0;
-
 }
 
 @media only screen and (min-width: 600px) {
@@ -13,7 +12,7 @@
 
 @media only screen and (min-width: 960px) {
     .ideaCard {
-        width: 31%;
+        width: 31.25%;
     }
 }
 
