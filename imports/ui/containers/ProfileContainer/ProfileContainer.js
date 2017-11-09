@@ -14,54 +14,35 @@ import { Meteor } from 'meteor/meteor';
 class ProfileContainer extends Component {
 
   render() {
-     console.log(this.props.ideas);
-    // console.log(this.props.profiles);
+
+  
 
       let usersData = this.props.profiles;
-      let ideasData = this.props.ideas ? this.props.ideas : null;
-
-
-
-      
+      let ideasData = this.props.ideas.length > 0 ? this.props.ideas : [];
       let userid = this.props.match.params.userid;
 
+                  //MAPS THROUGH IDEAS DATA TO RETURN NEW ARRAY OF VOTES
+                  //JOINS ALL VOTES INTO ONE ARRAY WITH ALL IDS THAT VOTED
+                  //COUNTS HOW MANY TIMES THE USER ID APPEARS IN THE ARRAY
+                  var voteData = ideasData.map(function(idea) {
+                    return idea.votes;
+                  }).reduce(function(a, b) {
+                    return a.concat(b);
+                  }, []);
+                  var userVote = 0;
+                  for(var i = 0; i < voteData.length; ++i){
+                      if(voteData[i] == userid)
+                      userVote++;
+                  }
 
-
-
-      let dataArray = ideasData.map(idea =>{
-        const newIdeaVotes = usersData.find( (user)=> idea.votes === user._id)
-        idea.votes = newIdeaVotes;
-  
-        return idea;
-      })
-
-      console.log(dataArray);
-
-
-
-
-
-
-
-
-
-
-
-      let profileData = usersData.filter((user) => {
-        return (
-          userid === user._id
-        );
-      })
-
-      // let voteData = ideasData.map((user) => {
-      //   return (
-      //     userid === user._id
-      //   );
-      // })
-
+                    let profileData = usersData.filter((user) => {
+                      return (
+                        userid === user._id
+                      );
+                    })
 
       return (
-          <Profile profileData={profileData} ideasData={ideasData}  />
+          <Profile profileData={profileData}  userVote={userVote} />
           
       );
   }
@@ -70,11 +51,10 @@ class ProfileContainer extends Component {
 
 
 export default createContainer(() => {
-  //setup subscription, pass in the publications name
-  Meteor.subscribe('usersAndIdeas'); //Whatever is available from the publication will be returned here
-  //return an object, whatever that is returned will be available on props for this component
+  Meteor.subscribe('usersAndIdeas'); 
   return {
     profiles: Profiles.find({}).fetch(),
     ideas: Ideas.find({}).fetch()
-  }; //We need to call fetch() that will invoke the cursor to actually execute the query
+  }; 
 }, ProfileContainer);
+

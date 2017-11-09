@@ -8,15 +8,9 @@ import {createContainer} from 'meteor/react-meteor-data';
 
 import './styles.css';
 
-// const styles = {
-//     description: {
-//         fontSize: '1rem',
-//         padding: '1rem 0 1rem 0',
-//     },
-// };
 
-const ProfileCard = ({user}) => {
 
+const ProfileCard = ({user , userVote}) => {
 
 
 
@@ -55,7 +49,7 @@ const ProfileCard = ({user}) => {
                             </div>
                     
                             <CardText > {`Enrolled in:  ${user.course}`}  </CardText>
-                            <CardText >  {`Voted: 5`} </CardText>
+                            <CardText >  {`Voted: ${userVote}`} </CardText>
 
                         </div>
                     </div>
@@ -67,7 +61,7 @@ const ProfileCard = ({user}) => {
                         <Link to="/users">
                             <CardActions>
                                 <div className="viewButton">
-                                   <RaisedButton backgroundColor= "#e1231a" labelColor="white" label="Back To All Users" />
+                                   <RaisedButton backgroundColor= "#e1231a" labelColor="#FAFAFA" label="Back To All Users" />
                                 </div>
                             </CardActions>
                         </Link>
