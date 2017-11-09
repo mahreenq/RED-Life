@@ -14,7 +14,7 @@ class Button extends Component {
     Meteor.logout((err) => console.log(err))
   }
 
-  render(){
+  render(){MediaDeviceInfo
     return (
       <div>
         <Link to="/login"><RaisedButton label="Logout" style={style} onClick={this.handleClick.bind(this)} /></Link>
