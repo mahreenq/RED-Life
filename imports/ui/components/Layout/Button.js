@@ -28,9 +28,9 @@ class Button extends Component {
   render(){MediaDeviceInfo
     return (
       <div>
-        <a href="#toggle"><RaisedButton label="Sign In" style={style}>
-          <div id="toggle"><AccountsUIWrapper onClick={this.onSigninClick.bind(this)} /></div>
-        </RaisedButton></a>
+        <RaisedButton label="Sign In" style={style}>
+          <AccountsUIWrapper onClick={this.onSigninClick.bind(this)} />
+        </RaisedButton>
         <Link to="/profile"><RaisedButton label="Profile" secondary={true} style={style} /></Link>
       </div>
     )
