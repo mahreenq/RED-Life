@@ -18,7 +18,7 @@ import './styles.css';
 const ProfileCard = ({user}) => {
 
 
-    console.log(user);
+
 
 
     let course = '';

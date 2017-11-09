@@ -15,6 +15,12 @@ Meteor.startup(() => {
 
   })
 });
+Meteor.publish("usersAndIdeas", function () {
+  return [
+    Profiles.find({}),
+    Ideas.find({})
+  ];
+});
 
 
 
