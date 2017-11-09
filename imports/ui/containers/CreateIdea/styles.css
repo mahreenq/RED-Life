@@ -8,6 +8,45 @@
     box-sizing: border-box;
     font-family: Roboto, sans-serif;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 30px, rgba(0, 0, 0, 0.23) 0px 6px 10px;
+    box-shadow: rgba(0, 0, 0, 0.062) 0px 10px 30px, rgba(0, 0, 0, 0.151) 0px 1px 5px;
     border-radius: 2px;
+    width:400px;    
+    justify-content: center;
+    margin: 0 auto;
+    height: 500px;
+}
+
+.outer-body{
+    padding:4rem;
+    background: #e52d27;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #b31217, #e1231a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #b31217, #e1231a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.create_idea{
+    padding:0;
+}
+
+.add-visual{
+    /* height:50px; */
+    width:100px;
+    padding:0.25rem;
+    border-radius: 100px;
+    cursor: pointer;
+    display:flex;
+    justify-content:center;
+    align-items: center;  
+    border:4px solid #e1231a;
+    overflow:hidden;
+    background-image: linear-gradient(to bottom, #666 50%, #FFFFFF 50%);
+    background-size: 100% 200%;
+    transition: all 1s;
+    color: #FFFFFF;
+    margin:1rem 0;
+
+}
+
+.add-visual:hover{
+    background-position: 0 -100%;
+    color:#2590EB;
 }

@@ -7,6 +7,12 @@ import {Ideas} from '../../../collections/ideas';
 
 import './styles';
 
+const styles = {
+    button: {
+        backgroundColor: 'red',
+    }
+};
+
 class CreateIdea extends Component {
     constructor(){
         super()
@@ -35,7 +41,10 @@ class CreateIdea extends Component {
 
     render(){
         return(
-            <form className="create_idea idea_form">
+            <div className="outer-body">
+            <div className="idea_form">
+            <form className="create_idea">
+            <div>
                 <TextField
                 hintText="Title"
                 errorText="This field is required"
@@ -43,19 +52,19 @@ class CreateIdea extends Component {
                 name="title"
                 value={this.state.title}
                 onChange={this.handleChange}
-                /><br />
+                /></div>
 
-                <TextField
+            <div><TextField
                 hintText="Description"
                 errorText="This field is required."
                 floatingLabelText="Enter idea description here"
                 multiLine={true}
-                rows={2}
+                rows={3}
                 name="description"
                 value={this.state.description}
                 onChange={this.handleChange}
                 /><br />
-                <div>
+                <div class="add-visual">
                     <input type="file"
                         name="picture"
                         value={this.state.picture}
@@ -63,8 +72,11 @@ class CreateIdea extends Component {
                     />
                 </div>
                 {/* <RaisedButton label="SUBMIT IDEA" secondary={true} /> */}
-                <RaisedButton type="submit" label="SUBMIT IDEA" secondary={true} onClick={this.handleSubmit}/>
+                <div><RaisedButton type="submit" label="SUBMIT IDEA" secondary={true} onClick={this.handleSubmit} style={styles.button} /></div>
+                </div>
             </form>
+            </div>
+            </div>
         )
     }
 };
