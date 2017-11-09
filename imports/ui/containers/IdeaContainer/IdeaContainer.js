@@ -16,7 +16,9 @@ class IdeaContainer extends Component {
     }
 
     removeIdea(idea) {
-        Meteor.call('ideas.removeIdea', idea);
+        if (confirm('Remove this idea?')) {
+            Meteor.call('ideas.removeIdea', idea);
+        };
     }
 
     addVote(idea) {
