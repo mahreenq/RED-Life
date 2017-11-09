@@ -31,6 +31,8 @@ const UserCard = ({user}) => {
             bio = 'None';
         }
 
+        console.log(user);
+
         return (
         //const logged_in_user = Meteor.userId();
             <Card className="userCard">
@@ -50,7 +52,7 @@ const UserCard = ({user}) => {
                 <CardText style={styles.description}>
                     {`Bio:  ${bio}`}
                 </CardText>
-            <Link to={user._id}>
+            <Link to={`/profile/${user._id}`}>
                 <CardActions>
                     <div className="viewButton">
                         <FlatButton label="View Profile" />
