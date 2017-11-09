@@ -15,6 +15,10 @@ class IdeaContainer extends Component {
         //this.props.dispatch(fetchItemsAndUsers(tagValues, profileId));
     }
 
+    removeIdea(idea) {
+        Meteor.call('ideas.removeIdea', idea);
+    }
+
     addVote(idea) {
         Meteor.call('ideas.addVote', idea);
     }
@@ -30,6 +34,7 @@ class IdeaContainer extends Component {
         return (
             <Idea
                 ideaData={ideaData}
+                removeIdea={this.removeIdea}
                 addVote={this.addVote}
                 removeVote={this.removeVote}
                 userId={userId}

@@ -13,7 +13,7 @@
 .notFound{
     width: 50%;
     display: flex;
-    border: solid 2px red;
+    border: solid 2px #e1231a ;
     border-radius: 30px;
     margin: 2em 0 2em 2em;
     justify-content: center;
@@ -27,5 +27,5 @@
 }
 
 .red a {
-    color: red;
+    color: #e1231a ;
 }

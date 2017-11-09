@@ -1,27 +1,27 @@
 #login-buttons{
     box-shadow: 1px 1px 5px #ccc;
-    padding:2rem;
-    width: 600px;
+    padding:0.45rem 1rem;
+    width: 500px;
     z-index: 15;
-    position: relative;
+    /* position: relative; */
     background: #fff;
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
-    border-radius: 4px;
+    border-radius: 2px;
     box-shadow: 0 0 30px rgba(#000, .1);
     box-sizing: border-box;
-    margin: 100px auto 10px;
-    overflow: hidden;
+    /* margin: 40px auto 10px; */
+    /* overflow: hidden; */
+    cursor: pointer;
 }
 
 .container{
-    margin:auto;
-    /* padding: 2rem; */
-    padding: 2rem 2rem 9rem 2rem;
-    background: #e52d27;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #b31217, #e1231a);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #b31217, #e1231a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    /* border-top:2px solid #fff; */
+    /* margin-top: 220px; */
+      /* fallback for old browsers */
+}
+
+.login-link-and-dropdown-list .login-form-sign-in{
+    /* margin-bottom: 120px; */
 }
 
 #login-sign-in-link{
@@ -29,15 +29,11 @@
 }
 
 .login-link-text{
-    display: block;
     color: #e1231a;
-    font-size: 18px;
     font-weight: 600;
     line-height: 1;
     text-transform: uppercase;
-    letter-spacing: .2em;
 }
-
 
 .login-close-text{
     display: none;
@@ -55,7 +51,7 @@
 #login-email-label-and-input{
     margin:2rem 0 0 0;
     padding:1rem 0 0.5rem 0;
-    width:250px;
+    width:200px;
 }
 
 #login-email-label-and-input #login-email-label{
@@ -84,7 +80,7 @@
 #login-password-label-and-input{
     margin:2rem 0 0 0;
     padding:1rem 0 1rem 0;
-    width:250px;
+    width:200px;
 }
 
 #login-password-label-and-input #login-password-label{
@@ -249,6 +245,3 @@
     border-bottom: 1px solid black;
     transition: 0.3s ease;
 }
-
-
-

@@ -2,12 +2,23 @@ import React, {Component} from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Link} from 'react-router-dom';
 import {Meteor} from 'meteor/meteor';
+import AccountsUIWrapper from '../AccountsWrapper/index.js';
+
+import './styles.css';
 
 const style = {
   margin: 12,
 };
 
 class Button extends Component {
+
+  onSigninClick(event) {
+    event.preventDefault();
+
+    Meteor.call('ideas.insert', (error, ideasId) => {
+      this.props.history.push(`/bins/${ideasId}`);
+    });
+  }
 
   handleClick() {
     console.log("worked")
@@ -17,7 +28,9 @@ class Button extends Component {
   render(){MediaDeviceInfo
     return (
       <div>
-        <Link to="/login"><RaisedButton label="Logout" style={style} onClick={this.handleClick.bind(this)} /></Link>
+        <a href="#toggle"><RaisedButton label="Sign In" style={style}>
+          <div id="toggle"><AccountsUIWrapper onClick={this.onSigninClick.bind(this)} /></div>
+        </RaisedButton></a>
         <Link to="/profile"><RaisedButton label="Profile" secondary={true} style={style} /></Link>
       </div>
     )

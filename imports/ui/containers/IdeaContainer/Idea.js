@@ -5,19 +5,18 @@ import './styles.css';
 
 import IdeaCardList from '../../components/IdeaCardList';
 
-const Idea = ({ideaData, addVote, removeVote, userId}) => {
+const Idea = ({ideaData, removeIdea, addVote, removeVote, userId}) => {
     return (
         <div className="appContent">
-            {ideaData !== undefined && ideaData.length > 0 ?
-                <div className="appIdeas">
-                    <IdeaCardList
-                        ideaData={ideaData}
-                        addVote={addVote}
-                        removeVote={removeVote}
-                        userId={userId}
-                    />
-                </div>
-            : ''}
+            <div className="appIdeas">
+                <IdeaCardList
+                    ideaData={ideaData}
+                    removeIdea={removeIdea}
+                    addVote={addVote}
+                    removeVote={removeVote}
+                    userId={userId}
+                />
+            </div>
         </div>
     );
 }
