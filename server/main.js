@@ -9,6 +9,10 @@ Meteor.startup(() => {
   })
   Meteor.publish('users', function() {
     return Profiles.find({});
+  }),
+  Meteor.publish('user', function() {
+    return Profiles.find(this.userId);
+
   })
 });
 

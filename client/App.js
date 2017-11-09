@@ -10,6 +10,7 @@ import CreateIdea from '../imports/ui/containers/CreateIdea';
 import SetUpProfile from '../imports/ui/containers/SetUpProfile';
 import AccountsUIWrapper from '../imports/ui/components/AccountsWrapper/index';
 import NotFound from '../imports/ui/components/NotFound';
+import EditProfile from '../imports/ui/containers/EditProfile';
 import ProfileContainer from '../imports/ui/containers/ProfileContainer';
 
 const App = () => (
@@ -24,6 +25,7 @@ const App = () => (
                     <Route exact path="/users" component={Users} />
                     <Route path="/profile/:userid"  component={ProfileContainer} />
                     <Route exact path="/createidea" component={CreateIdea} />
+                    <Route exact path="/editprofile" component={EditProfile} />
                     <Route component={NotFound} />
                 </Switch>
               </Layout>

@@ -25,7 +25,7 @@ class Button extends Component {
     Meteor.logout((err) => console.log(err))
   }
 
-  render(){
+  render(){MediaDeviceInfo
     return (
       <div>
         <a href="#toggle"><RaisedButton label="Sign In" style={style}>
