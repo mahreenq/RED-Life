@@ -13,10 +13,6 @@
     /* margin: 5rem 0; */
 }
 
-#toggle {
-    display: none;
-  }
-  
-  #toggle:target {
-    display: block;
+  .hide{
+      display: none;
   }
