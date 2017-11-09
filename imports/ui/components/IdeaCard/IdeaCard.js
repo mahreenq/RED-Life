@@ -10,21 +10,16 @@ import './styles.css';
 const styles = {
     header: {
         fontSize: '1rem',
-
-   
     },
     description: {
         fontSize: '1rem',
     },
-    vote: {
-        backgroundColor: 'red',
-    },
-    unvote: {
-        backgroundColor: 'black',
+    button: {
+        margin: '0 0.5rem 0 0.5rem',
     }
 };
 
-const IdeaCard = ({idea, addVote, removeVote, userId}) => {
+const IdeaCard = ({idea, removeIdea, addVote, removeVote, userId}) => {
     let titleColor = "red";
     let updateVote = addVote;
     let buttonLabel = "Vote";
@@ -46,7 +41,6 @@ const IdeaCard = ({idea, addVote, removeVote, userId}) => {
                 title={idea.title}
                 titleColor={titleColor}
                 titleStyle={styles.header}
-            
             />
             </div>
             <CardText style={styles.description}>
@@ -62,7 +56,17 @@ const IdeaCard = ({idea, addVote, removeVote, userId}) => {
                         onClick={updateVote}
                         backgroundColor={voted ? '#000000' : '#e1231a'}
                         labelColor='#ffffff'
+                        style={styles.button}
                     />
+                    {idea.owner === userId ?
+                        <RaisedButton
+                            label='Remove'
+                            onClick={removeIdea}
+                            backgroundColor='#757575'
+                            labelColor='#ffffff'
+                            style={styles.button}
+                        />
+                    : ''}
                 </div>
             </CardActions>
         </Card>

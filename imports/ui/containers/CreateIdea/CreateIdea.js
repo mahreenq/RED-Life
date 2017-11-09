@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import {createContainer} from 'meteor/react-meteor-data';
@@ -28,6 +29,8 @@ class CreateIdea extends Component {
         console.log(1);
         Meteor.call('ideas.insert', this.state)
         console.log('id', this.props.ideas);
+        // redirect to ideas page after submit
+        this.props.history.push('/ideas');
     }
 
     render(){
@@ -41,7 +44,7 @@ class CreateIdea extends Component {
                 value={this.state.title}
                 onChange={this.handleChange}
                 /><br />
-                
+
                 <TextField
                 hintText="Description"
                 errorText="This field is required."
@@ -61,7 +64,7 @@ class CreateIdea extends Component {
                 </div>
                 {/* <RaisedButton label="SUBMIT IDEA" secondary={true} /> */}
                 <RaisedButton type="submit" label="SUBMIT IDEA" secondary={true} onClick={this.handleSubmit}/>
-            </form>   
+            </form>
         )
     }
 };

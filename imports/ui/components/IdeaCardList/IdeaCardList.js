@@ -15,36 +15,44 @@ const styles = {
         textAlign: 'center',
         color: 'black',
     }
-
 };
 
-const IdeaCardList = ({ideaData, addVote, removeVote, userId}) => (
-
+const IdeaCardList = ({ideaData, removeIdea, addVote, removeVote, userId}) => (
     <div>
-
         <div className="ideasHeader">
-        <Card className="ideasHeaderCard">
-            <CardTitle titleStyle={styles.header} title="TAKE A LOOK THROUGH SOME GREAT IDEAS" subtitleStyle = {styles.subtitle} subtitle="Make sure to get involved and vote!" />
-            <CardActions>
-                <Link to = '/createidea'> <RaisedButton backgroundColor= '#e1231a' labelColor='white' label="SHARE YOUR OWN IDEA HERE" /> </Link> 
-            </CardActions>
-        </Card>
-        </div>
-
-
-        <div className="ideaCardList">
-            {ideaData.map(idea =>
-                <IdeaCard
-                    key={idea._id}
-                    idea={idea}
-                    addVote={addVote.bind(this, idea)}
-                    removeVote={removeVote.bind(this, idea)}
-                    userId={userId}
+            <Card className="ideasHeaderCard">
+                <CardTitle
+                    titleStyle={styles.header}
+                    title="TAKE A LOOK THROUGH SOME GREAT IDEAS"
+                    subtitleStyle = {styles.subtitle}
+                    subtitle="Make sure to get involved and vote!"
                 />
-            )}
+                <CardActions>
+                    <Link to = '/createidea'>
+                        <RaisedButton
+                            backgroundColor= '#e1231a'
+                            labelColor='#ffffff'
+                            label="SHARE YOUR OWN IDEA HERE"
+                        />
+                    </Link>
+                </CardActions>
+            </Card>
         </div>
 
-
+        {ideaData !== undefined && ideaData.length > 0 ?
+            <div className="ideaCardList">
+                {ideaData.map(idea =>
+                    <IdeaCard
+                        key={idea._id}
+                        idea={idea}
+                        removeIdea={removeIdea.bind(this, idea)}
+                        addVote={addVote.bind(this, idea)}
+                        removeVote={removeVote.bind(this, idea)}
+                        userId={userId}
+                    />
+                )}
+            </div>
+        : ''}
     </div>
 );
 
