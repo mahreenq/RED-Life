@@ -1,16 +1,17 @@
 .appProfileContent {
-  display: flex;
+  /*display: flex;
   flex-direction: column;
-  min-height: 100%;
+  min-height: 100%;*/
 }
 
 .appProfile {
-  display: flex;
-  flex-grow: 1;
+  /*display: flex;
+  flex-grow: 1;*/
+
   /*margin: 0 auto;
   max-width: 71rem;
   width: 100%;*/
   margin: 0 10% 0 10%;
 
-  justify-content: center;
+  /*justify-content: center;*/
 }
