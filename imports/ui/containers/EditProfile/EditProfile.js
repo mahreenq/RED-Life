@@ -24,27 +24,35 @@ class EditProfile extends Component{
     this.setState({
         [event.target.name]: event.target.value,
     })
+    console.log(this.state)
   }
 
   handleSubmit = (event) => {
       event.preventDefault();
       Meteor.call('profiles.update', this.state)
+      console.log(this.state)
   }
 
   componentDidMount = () => {
-    this.setState({
-        [event.target.name]: "name",
-        })
+    Meteor.startup(() => {
+      let dbInfo = this.props.currentUser[0] !== undefined ? this.props.currentUser[0] : "...Loading";
+      console.log(dbInfo)
+    })
   }
 
   render(){
-      console.log('userid', this.props.currentUser);
+      // let dbInfo = this.props.currentUser[0] !== undefined ? this.props.currentUser[0] : "...Loading";
+      // this.setState({
+      //   name: dbInfo.name,
+      //   course: dbInfo.course,
+      //   bio: dbInfo.bio,
+
+      // })
       return(
         <form>
           <div>
             <TextField 
             name="name"
-            defaultValue='Hi there'
             hintText="What's your name?"
             fullWidth label="Name"
             value={this.state.name}
@@ -52,7 +60,8 @@ class EditProfile extends Component{
             />
           </div>
           <div>
-            <TextField name="course"
+            <TextField 
+            name="course"
             hintText="Course" fullWidth
             label="course"
             value={this.state.course}
@@ -60,7 +69,8 @@ class EditProfile extends Component{
             />
           </div>
           <div>
-            <TextField name="bio"
+            <TextField 
+            name="bio"
             hintText="About you"
             fullWidth label="bio"
             value={this.state.bio}
