@@ -16,7 +16,7 @@ class Button extends Component {
     event.preventDefault();
 
     Meteor.call('ideas.insert', (error, ideasId) => {
-      this.props.history.push(`/bins/${ideasId}`);
+      this.props.history.push(`/ideas/${ideasId}`);
     });
   }
 
@@ -25,10 +25,10 @@ class Button extends Component {
     Meteor.logout((err) => console.log(err))
   }
 
-  render(){MediaDeviceInfo
+  render(){
     return (
       <div>
-        <RaisedButton label="Sign In" style={style}>
+        <RaisedButton label="Sign In" style={style} labelColor="#fff">
           <AccountsUIWrapper onClick={this.onSigninClick.bind(this)} />
         </RaisedButton>
         <Link to="/profile"><RaisedButton label="Profile" secondary={true} style={style} /></Link>

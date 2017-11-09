@@ -1,9 +1,10 @@
 #login-buttons{
     box-shadow: 1px 1px 5px #ccc;
-    padding:0.45rem 1rem;
+    padding:0 1rem;
     width: 500px;
     z-index: 15;
-    /* position: relative; */
+    position: absolute;
+    right:0%;
     background: #fff;
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
@@ -16,7 +17,6 @@
 }
 
 .container{
-    /* margin-top: 220px; */
       /* fallback for old browsers */
 }
 
@@ -33,10 +33,16 @@
     font-weight: 600;
     line-height: 1;
     text-transform: uppercase;
+    padding: 0 0 1rem 0;
 }
 
 .login-close-text{
-    display: none;
+    /* display: none; */
+    color:#000;
+    font-size:12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 0 0 13.25rem;
 }
 
 .login-form, .login-password-form{
@@ -144,7 +150,7 @@
 #signup-link{
     cursor: pointer;
     display: block;
-    margin: 1.5rem 0 0 0;
+    margin: 1.5rem 0 1.5rem 0;
     color: #e1231a;
     font-size: 12px;
     font-weight:800;
@@ -158,7 +164,7 @@
 #forgot-password-link{
     cursor: pointer;
     display: block;
-    margin: 1.5rem 0 0 0;
+    margin: 1.5rem 0 1.5rem 0;
     color: #666;
     font-size: 12px;
     line-height: 1;
@@ -171,7 +177,7 @@
 #back-to-login-link{
     cursor: pointer;
     display: block;
-    margin: 1.5rem 0 0 0;
+    margin: 1.5rem 0 1.5rem 0;
     color: #666;
     font-size: 12px;
     line-height: 1;
