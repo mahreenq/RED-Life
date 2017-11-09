@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor'
 import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
@@ -31,23 +32,21 @@ class EditProfile extends Component{
       event.preventDefault();
       Meteor.call('profiles.update', this.state)
       console.log(this.state)
+      this.props.history.push(`/profile/${Meteor.userId()}`);
   }
 
   componentDidMount = () => {
-    Meteor.startup(() => {
+    setTimeout(() => {
       let dbInfo = this.props.currentUser[0] !== undefined ? this.props.currentUser[0] : "...Loading";
-      console.log(dbInfo)
-    })
+      this.setState({
+        name: dbInfo.name,
+        course: dbInfo.course,
+        bio: dbInfo.bio,
+      })
+    },1000);
   }
 
   render(){
-      // let dbInfo = this.props.currentUser[0] !== undefined ? this.props.currentUser[0] : "...Loading";
-      // this.setState({
-      //   name: dbInfo.name,
-      //   course: dbInfo.course,
-      //   bio: dbInfo.bio,
-
-      // })
       return(
         <form>
           <div>
@@ -85,21 +84,19 @@ class EditProfile extends Component{
 
           />
           </div>
-
-          <div>
-          <RaisedButton type="submit" label="SAVE CHANGES" secondary={true} onClick={this.handleSubmit}/>
-          </div>
+            <div>
+              <RaisedButton type="submit" label="SAVE CHANGES" secondary={true} onClick={this.handleSubmit}/>
+            </div>
         </form>
       )
   }
 }
 
+const EProfile = withRouter(EditProfile);
 
 export default createContainer(() => {
-    //setup subscription, pass in the publications name
-    Meteor.subscribe('user'); //Whatever is available from the publication will be returned here
-    //return an object, whatever that is returned will be available on props for this component
+    Meteor.subscribe('user');
     return {
         currentUser: Profiles.find({}).fetch()
-    }; //We need to call fetch() that will invoke the cursor to actually execute the query
-  }, EditProfile);
+    };
+  }, EProfile);
