@@ -64,9 +64,14 @@ class AdminImages extends Component{
   }
 
   handleAdd = () => {
-    console.log("hi")
     event.preventDefault();
     Meteor.call('admin.insert', this.state)
+  }
+
+  handleX = (event) => {
+    console.log(event.target.value);
+    event.preventDefault();
+    Meteor.call('admin.remove', this.state)
   }
 
   render(){
@@ -96,12 +101,15 @@ class AdminImages extends Component{
         cellHeight={300}
         style={styles.gridList}
       >
-        <Subheader>December</Subheader>
         {tilesData.map((tile) => (
           <GridTile
             key={tile.img}
-            title={tile.title}
             style={styles}
+            children={<RaisedButton
+              key={tile.img}
+              label="X"
+              onClick={this.handleX}
+            />}
           />
         ))}
       </GridList>
