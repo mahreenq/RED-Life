@@ -31,10 +31,18 @@ const IdeaCard = ({idea, removeIdea, addVote, removeVote, userId}) => {
         voted = true;
     }
 
+    const background = {
+        backgroundImage: 'url("/images/grumpy_Cat.jpg" )', 
+    }
+
+
     return (
         <Card className="ideaCard">
             <CardMedia className="ideaImage">
-                <img src="/images/grumpy_Cat.jpg" alt="" />
+            <div className = "ideaCardImage"  style={background}>
+
+            </div>
+     
             </CardMedia>
             <div className = "singleIdeaTitle">
             <CardHeader
@@ -78,3 +86,7 @@ IdeaCard.propTypes = {
 };
 
 export default IdeaCard;
+
+
+
+
