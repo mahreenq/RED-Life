@@ -43,6 +43,7 @@ class CreateIdea extends Component {
         return(
             <div className="outer-body">
             <div className="idea_form">
+            <div className="title">Create Idea for Friday Social !</div><br />
             <form className="create_idea">
             <div>
                 <TextField
@@ -70,6 +71,7 @@ class CreateIdea extends Component {
                         value={this.state.picture}
                         onChange={this.handleChange}
                     />
+                   
                 </div>
                 {/* <RaisedButton label="SUBMIT IDEA" secondary={true} /> */}
                 <div><RaisedButton type="submit" label="SUBMIT IDEA" secondary={true} onClick={this.handleSubmit} style={styles.button} /></div>

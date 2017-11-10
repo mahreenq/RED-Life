@@ -16,6 +16,13 @@
     height: 500px;
 }
 
+.title{
+    color: #e1231a;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
 .outer-body{
     padding:4rem;
     background: #e52d27;  /* fallback for old browsers */
@@ -36,13 +43,13 @@
     display:flex;
     justify-content:center;
     align-items: center;  
-    border:4px solid #e1231a;
+    border:2px solid #fff;
     overflow:hidden;
-    background-image: linear-gradient(to bottom, #666 50%, #FFFFFF 50%);
+    background-image: linear-gradient(to bottom, #e1231a 50%, #FFFFFF 50%);
     background-size: 100% 200%;
     transition: all 1s;
     color: #FFFFFF;
-    margin:1rem 0;
+    margin:2rem 0;
 
 }
 
