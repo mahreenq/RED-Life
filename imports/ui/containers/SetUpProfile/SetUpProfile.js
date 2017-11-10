@@ -35,44 +35,53 @@ class SetUpProfile extends Component{
 
   render(){
       return(
-        <form>
-          <div>
-            <TextField name="name"
-            hintText="What's your name?"
-            fullWidth label="Name"
-            value={this.state.name}
-            onChange={this.handleChange}
-            />
-          </div>
-          <div>
-            <TextField name="course"
-            hintText="Course" fullWidth
-            label="course"
-            value={this.state.course}
-            onChange={this.handleChange}
-            />
-          </div>
-          <div>
-            <TextField name="bio"
-            hintText="About you"
-            fullWidth label="bio"
-            value={this.state.bio}
-            onChange={this.handleChange}
-            />
-          </div>
-          <div>
-          <input type="file"
-            name="picture"
-            value={this.state.picture}
-            onChange={this.handleChange}
+        <div className="OuterBody">
+        <div className="container">
+        <div className="card"></div>
+        <div className="card">
+          <h1 className="title">SETUP PROFILE</h1>
+          <form>
+            <div className="input-container">
+                <TextField name="name"
+                hintText="What's your name?"
+                fullWidth label="Name"
+                value={this.state.name}
+                onChange={this.handleChange}
+                />
+            </div>
 
-          />
-          </div>
+            <div className="input-container">
+                <TextField name="course"
+                hintText="Course" fullWidth
+                label="course"
+                value={this.state.course}
+                onChange={this.handleChange}
+                />
+            </div>
 
-          <div>
-          <RaisedButton type="submit" label="SUBMIT Profile info" secondary={true} onClick={this.handleSubmit}/>
-          </div>
-        </form>
+            <div className="input-container">
+                <TextField name="bio"
+                hintText="About you"
+                fullWidth label="bio"
+                value={this.state.bio}
+                onChange={this.handleChange}
+                />
+            </div>
+
+            <div><input type="file"
+                    name="picture"
+                    value={this.state.picture}
+                    onChange={this.handleChange}
+                    className="foo"
+                /></div>
+
+            <div className="button-container">
+              <button type="submit" label="SUBMIT Profile info" onClick={this.handleSubmit}><span>Submit</span></button>
+            </div>
+          </form>
+        </div>
+        </div>
+        </div>
       )
   }
 }

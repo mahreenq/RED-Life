@@ -5,7 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { Link } from 'react-router-dom';
 import {Profiles} from '../../../collections/profiles';
 import {createContainer} from 'meteor/react-meteor-data';
-
+import SetupProfile from '../../containers/SetUpProfile/index.js';
 import FontAwesome from'react-fontawesome';
 
 import './styles.css';
