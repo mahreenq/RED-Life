@@ -65,7 +65,7 @@ class CreateIdea extends Component {
                 value={this.state.description}
                 onChange={this.handleChange}
                 /><br />
-                <div class="add-visual">
+                <div className="add-visual">
                     <input type="file"
                         name="picture"
                         value={this.state.picture}
