@@ -7,12 +7,6 @@ import {Ideas} from '../../../collections/ideas';
 
 import './styles';
 
-const styles = {
-    button: {
-        backgroundColor: 'red',
-    }
-};
-
 class CreateIdea extends Component {
     constructor(){
         super()
@@ -36,8 +30,10 @@ class CreateIdea extends Component {
         // form field validations
 
         let errorMessage = "";
+        let fieldLength = 0;
 
-        if (this.refs.title.props.value.length > 20) {
+        fieldLength = this.refs.title.props.value.length;
+        if (fieldLength > 20) {
             errorMessage += "Title length cannot exceed 20 characters.\n"
         }
         if (this.refs.description.props.value.length > 150) {
@@ -59,48 +55,73 @@ class CreateIdea extends Component {
         }
     }
 
+    handleCancel = (event) => {
+        event.preventDefault();
+
+        this.props.history.push('/ideas');
+    }
+
     render(){
         return(
             <div className="outer-body">
-            <div className="idea_form">
-            <div className="title">Create Idea for Friday Social !</div><br />
-            <form className="create_idea">
-            <div>
-                <TextField
-                hintText="Title"
-                errorText="This field is required"
-                type="text"
-                name="title"
-                ref="title"
-                value={this.state.title}
-                onChange={this.handleChange}
-                /></div>
+                <div className="idea_form">
+                    <div className="title">
+                        Create Idea for Friday Social !
+                    </div>
+                    <br />
 
-            <div><TextField
-                hintText="Description"
-                errorText="This field is required."
-                floatingLabelText="Enter idea description here"
-                multiLine={true}
-                rows={3}
-                name="description"
-                ref="description"
-                value={this.state.description}
-                onChange={this.handleChange}
-                /><br />
-                <div className="add-visual">
-                    <input type="file"
-                        name="picture"
-                        ref="picture"
-                        value={this.state.picture}
-                        onChange={this.handleChange}
-                    />
+                    <form className="create_idea">
+                        <div>
+                            <TextField
+                                hintText="Title"
+                                errorText="This field is required"
+                                type="text"
+                                name="title"
+                                ref="title"
+                                value={this.state.title}
+                                onChange={this.handleChange}
+                            />
+                        </div>
 
+                        <div>
+                            <TextField
+                                hintText="Description"
+                                errorText="This field is required."
+                                floatingLabelText="Enter idea description here"
+                                multiLine={true}
+                                rows={3}
+                                name="description"
+                                ref="description"
+                                value={this.state.description}
+                                onChange={this.handleChange}
+                            />
+                            <br />
+
+                            <div className="add-visual">
+                                <input type="file"
+                                    name="picture"
+                                    ref="picture"
+                                    value={this.state.picture}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
+
+                            <div className="submitIdea">
+                                <RaisedButton
+                                    label="Submit"
+                                    secondary={true}
+                                    onClick={this.handleSubmit}
+                                />
+                                <RaisedButton
+                                    label="Cancel"
+                                    onClick={this.handleCancel}
+                                    backgroundColor='#757575'
+                                    labelColor='#ffffff'
+                                />
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                {/* <RaisedButton label="SUBMIT IDEA" secondary={true} /> */}
-                <div><RaisedButton type="submit" label="SUBMIT IDEA" secondary={true} onClick={this.handleSubmit} style={styles.button} /></div>
-                </div>
-            </form>
-            </div>
             </div>
         )
     }
