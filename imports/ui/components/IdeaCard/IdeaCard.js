@@ -24,6 +24,7 @@ const IdeaCard = ({idea, removeIdea, addVote, removeVote, userId}) => {
     let updateVote = addVote;
     let buttonLabel = "Vote";
     let voted = false;
+    let loggedIn = false;
 
     if (idea.votes.find((vote) => vote === userId)) {
         updateVote = removeVote;
@@ -31,10 +32,15 @@ const IdeaCard = ({idea, removeIdea, addVote, removeVote, userId}) => {
         voted = true;
     }
 
-    const background = {
-        backgroundImage: 'url("/images/grumpy_Cat.jpg" )', 
+    if (userId !== null) {
+        if (userId.length > 0) {
+            loggedIn = true;
+        }
     }
 
+    const background = {
+        backgroundImage: 'url("/images/grumpy_Cat.jpg" )',
+    }
 
     return (
         <Card className="ideaCard">
@@ -42,7 +48,7 @@ const IdeaCard = ({idea, removeIdea, addVote, removeVote, userId}) => {
             <div className = "ideaCardImage"  style={background}>
 
             </div>
-     
+
             </CardMedia>
             <div className = "singleIdeaTitle">
             <CardHeader
@@ -65,6 +71,7 @@ const IdeaCard = ({idea, removeIdea, addVote, removeVote, userId}) => {
                         backgroundColor={voted ? '#000000' : '#e1231a'}
                         labelColor='#ffffff'
                         style={styles.button}
+                        disabled={loggedIn ? false : true}
                     />
                     {idea.owner === userId ?
                         <RaisedButton
@@ -73,6 +80,7 @@ const IdeaCard = ({idea, removeIdea, addVote, removeVote, userId}) => {
                             backgroundColor='#757575'
                             labelColor='#ffffff'
                             style={styles.button}
+                            disabled={loggedIn ? false : true}
                         />
                     : ''}
                 </div>
@@ -86,7 +94,3 @@ IdeaCard.propTypes = {
 };
 
 export default IdeaCard;
-
-
-
-
