@@ -13,7 +13,8 @@ import './styles.css';
 const ProfileCard = ({user , userVote}) => {
 
 
-
+    console.log(user._id);
+    console.log (user);
 
     let course = '';
     let bio = '';
@@ -62,6 +63,7 @@ const ProfileCard = ({user , userVote}) => {
                             <CardActions>
                                 <div className="viewButton">
                                    <RaisedButton backgroundColor= "#e1231a" labelColor="#FAFAFA" label="Back To All Users" />
+                                   <RaisedButton backgroundColor= "#e1231a" labelColor="#FAFAFA" label="Edit Profile" />
                                 </div>
                             </CardActions>
                         </Link>
