@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import {Profiles} from '../../../collections/profiles';
 import {createContainer} from 'meteor/react-meteor-data';
 
+import FontAwesome from'react-fontawesome';
+
 import './styles.css';
 
 
@@ -33,36 +35,58 @@ const ProfileCard = ({user , userVote}) => {
 
 
         return (
-
-   <div className="individual-profile-card">       
-  <div className="product-viewer">
-  <div className="header">
-    <a href="#" className="VoteCount">{`Voted: ${userVote}`}</a>
-
-    <ul className="menu">
-      <li><a href=""></a></li>
-    </ul>
-  </div>
-  <section className="product-viewer_content">
-      
-    <div className="content-slider slide-2-active">
-      <div className="slider-item">
-        <figure>
-          {/* <img src="https://puu.sh/k27la/555a930f8e.png" alt="" /> */}
-          <img src="/images/grumpy_dog.jpg" alt="" />
-          
-          <div className="figcaption">
-            <span className="desc"><h3>{`Enrolled in:  ${user.course}`}</h3></span>
-            <span className="name"><h2>{user.name}</h2></span>
-            <span className="price">{user.bio}</span>
+            <div className="OuterBody">
+            <div className="container">
+            <div className="card"></div>
+            <div className="card">
+              <h1 className="title">View Profile</h1>
+             
+                <div className="input-container">
+                <div className="content-slider">
+                    <div className="slider-item">
+                        <figure>
+                            <img src="/images/grumpy_dog.jpg" alt="" />
+                            <div className="figcaption">
+                                <span className="desc"><h3>{`Enrolled in:  ${user.course}`}</h3></span>
+                                <span className="name"><h2>{user.name}</h2></span>
+                                <span className="price">{user.bio}</span>
+                            </div>
+                        </figure>
+                        <div className="bar"></div>
+                        </div>
+                        <div className="VoteCountContainer"><a href="#" className="VoteCount">{`Voted: ${userVote}`}</a></div>
+                    </div>
+                </div>
+             
+            </div>
+            <div className="card alt">
+            <Link to="/setupprofile"> <div className="toggle"></div></Link>
+              <h1 className="title">Register
+                <div className="close"></div>
+              </h1>
+              <form>
+                <div className="input-container">
+                  <input type="#{type}" id="#{label}" required="required"/>
+                  <label for="#{label}">Username</label>
+                  <div className="bar"></div>
+                </div>
+                <div className="input-container">
+                  <input type="#{type}" id="#{label}" required="required"/>
+                  <label for="#{label}">Password</label>
+                  <div className="bar"></div>
+                </div>
+                <div className="input-container">
+                  <input type="#{type}" id="#{label}" required="required"/>
+                  <label for="#{label}">Repeat Password</label>
+                  <div className="bar"></div>
+                </div>
+                <div className="button-container">
+                  <button><span>Next</span></button>
+                </div>
+              </form>
+            </div>
           </div>
-        </figure>
-      </div>
-    </div>
-    
-  </section>
-</div>
-</div>
+        </div>
 
         )
 };
