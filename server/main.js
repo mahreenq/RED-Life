@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
 import { Ideas } from '../imports/collections/ideas';
 import { Profiles } from '../imports/collections/profiles';
+import { Admin } from '../imports/collections/admin'; 
 
 Meteor.startup(() => {
   Meteor.publish('ideas', function() {
@@ -14,12 +15,15 @@ Meteor.startup(() => {
     return Profiles.find(this.userId);
 
   })
-});
-Meteor.publish("usersAndIdeas", function () {
-  return [
-    Profiles.find({}),
-    Ideas.find({})
-  ];
+  Meteor.publish("usersAndIdeas", function () {
+    return [
+      Profiles.find({}),
+      Ideas.find({})
+    ];
+  });
+  Meteor.publish('admin', function(){
+    return Admin.find({})
+  })
 });
 
 
