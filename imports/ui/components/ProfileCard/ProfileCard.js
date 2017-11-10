@@ -32,43 +32,35 @@ const ProfileCard = ({user , userVote}) => {
 
 
         return (
-            <div className = "singleProfile ">
+   <div className="individual-profile-card">       
+  <div className="product-viewer">
+  <div className="header">
+    <a href="#" className="VoteCount">{`Voted: ${userVote}`}</a>
 
-
-                <Card className="profileCard" style={{borderRadius: "50px"}}>
-                    <div className="flex">
-                        <div className="width-60">
-                            <CardMedia className="profileImage"   >
-                                    <img src="/images/grumpy_dog.jpg" alt="" />
-                            </CardMedia>
-                        </div>
-                    
-                        <div className ="align-self-center  ">
-                            <div className="profileCardName">
-                            <CardTitle title={user.name} subtitle={user.bio} titleColor="#e1231a" />
-                            </div>
-                    
-                            <CardText > {`Enrolled in:  ${user.course}`}  </CardText>
-                            <CardText >  {`Voted: ${userVote}`} </CardText>
-
-                        </div>
-                    </div>
-
-                </Card> 
-
-                    <div className="profileCardButton">
-
-                        <Link to="/users">
-                            <CardActions>
-                                <div className="viewButton">
-                                   <RaisedButton backgroundColor= "#e1231a" labelColor="#FAFAFA" label="Back To All Users" />
-                                </div>
-                            </CardActions>
-                        </Link>
-                    </div>
-            
-
-            </div>
+    <ul className="menu">
+      <li><a href=""></a></li>
+    </ul>
+  </div>
+  <section className="product-viewer_content">
+      
+    <div className="content-slider slide-2-active">
+      <div className="slider-item">
+        <figure>
+          {/* <img src="https://puu.sh/k27la/555a930f8e.png" alt="" /> */}
+          <img src="/images/grumpy_dog.jpg" alt="" />
+          
+          <div className="figcaption">
+            <span className="desc"><h3>{`Enrolled in:  ${user.course}`}</h3></span>
+            <span className="name"><h2>{user.name}</h2></span>
+            <span className="price">{user.bio}</span>
+          </div>
+        </figure>
+      </div>
+    </div>
+    
+  </section>
+</div>
+</div>
 
         )
 };
