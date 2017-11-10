@@ -61,7 +61,7 @@ const ProfileCard = ({user , userVote}) => {
              
             </div>
             <div className="card alt">
-            <Link to="/setupprofile"> <div className="toggle"></div></Link>
+            <Link to="/editprofile"> <div className="toggle"></div></Link>
               <h1 className="title">Register
                 <div className="close"></div>
               </h1>
