@@ -5,6 +5,10 @@ import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import RaisedButton from 'material-ui/RaisedButton';
 
+import { Meteor } from 'meteor/meteor';
+import { Admin } from '../../../collections/admin';
+import { createContainer } from 'meteor/react-meteor-data';
+
 const styles = {
   root: {
     display: 'flex',
@@ -38,43 +42,13 @@ const tilesData = [
     img: '4',
     title: 'Morning',
     author: 'fancycrave1',
-  },
-  {
-    img: '5',
-    title: 'Hats',
-    author: 'Hans',
-  },
-  {
-    img: '6',
-    title: 'Honey',
-    author: 'fancycravel',
-  },
-  {
-    img: '7',
-    title: 'Vegetables',
-    author: 'jill111',
-  },
-  {
-    img: '8',
-    title: 'Water plant',
-    author: 'BkrmadtyaKarki',
-  },
-  {
-    img: '9',
-    title: 'Vegetables',
-    author: 'jill111',
-  },
-  {
-    img: '10',
-    title: 'Water plant',
-    author: 'BkrmadtyaKarki',
-  },
+  }
 ];
 
 /**
  * A simple example of a scrollable `GridList` containing a [Subheader](/#/components/subheader).
  */
-class GridListStuff extends Component{
+class AdminImages extends Component{
   constructor(){
     super()
 
@@ -87,11 +61,12 @@ class GridListStuff extends Component{
     this.setState({
       [event.target.name]: event.target.value,
     })
-    console.log(this.state)
   }
 
-  handleSubmit(){
+  handleAdd = () => {
     console.log("hi")
+    event.preventDefault();
+    Meteor.call('admin.insert', this.state)
   }
 
   render(){
@@ -113,7 +88,7 @@ class GridListStuff extends Component{
         <RaisedButton
           secondary={true}
           label="ADD"
-          onSubmit={this.handleSubmit}
+          onClick={this.handleAdd}
         />
         
       </div>
@@ -134,4 +109,9 @@ class GridListStuff extends Component{
   )}
 };
 
-export default GridListStuff;
+export default createContainer(() => {
+  Meteor.subscribe('admin'); 
+  return {
+    images: Admin.find({}).fetch(),
+  }; 
+}, AdminImages);

@@ -5,7 +5,12 @@ Meteor.methods({
         return Admin.insert({
           image: [img]
         })
+    },
+    'admin.remove' (img){
+        return Admin.remove({
+          image: [img]
+        })
     }
 })
 
-export const Admin = Meteor.admin;
+export const Admin = new Mongo.Collection('admin');
