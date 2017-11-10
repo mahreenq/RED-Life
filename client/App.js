@@ -13,6 +13,7 @@ import NotFound from '../imports/ui/components/NotFound';
 import EditProfile from '../imports/ui/containers/EditProfile';
 import ProfileContainer from '../imports/ui/containers/ProfileContainer';
 import Home from '../imports/ui/components/Home';
+import GridList from '../imports/ui/containers/TempAdmin';
 
 
 const App = () => (
@@ -28,6 +29,7 @@ const App = () => (
                     <Route path="/profile/:userid"  component={ProfileContainer} />
                     <Route exact path="/createidea" component={CreateIdea} />
                     <Route exact path="/editprofile" component={EditProfile} />
+                    <Route exact path="/gridlist" component={GridList} />
                     <Route component={NotFound} />
                 </Switch>
               </Layout>
