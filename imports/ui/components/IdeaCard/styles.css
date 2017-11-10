@@ -25,9 +25,6 @@
     width: 90%;
 }
 
-.ideaImage img {
-    /*border-radius: 50%;*/
-}
 
 .voteCount span {
     color: #e1231a;
@@ -40,4 +37,11 @@
 .singleIdeaTitle{
     text-transform: uppercase;
     /* text-align: center; */
+}
+
+.ideaCardImage{
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    
 }
