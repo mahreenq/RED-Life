@@ -9,87 +9,148 @@ import MenuItem from 'material-ui/MenuItem';
 import {createContainer} from 'meteor/react-meteor-data';
 import {Profiles} from '../../../collections/profiles';
 
+import './styles';
+
 class EditProfile extends Component{
-  constructor(){
-    super();
+    constructor(){
+        super();
 
-    this.state = {
-      name: '',
-      course: '',
-      bio: '',
-      picture: ''
+        this.state = {
+            name: '',
+            course: '',
+            bio: '',
+            picture: ''
+        }
     }
-  }
 
-  handleChange = (event) => {
-    this.setState({
-        [event.target.name]: event.target.value,
-    })
-    console.log(this.state)
-  }
+    handleChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value,
+        })
+        //console.log(this.state)
+    }
 
-  handleSubmit = (event) => {
-      event.preventDefault();
-      Meteor.call('profiles.update', this.state)
-      console.log(this.state)
-      this.props.history.push(`/profile/${Meteor.userId()}`);
-  }
+    handleSubmit = (event) => {
+        event.preventDefault();
 
-  componentDidMount = () => {
-    setTimeout(() => {
-      let dbInfo = this.props.currentUser[0] !== undefined ? this.props.currentUser[0] : "...Loading";
-      this.setState({
-        name: dbInfo.name,
-        course: dbInfo.course,
-        bio: dbInfo.bio,
-      })
-    },1000);
-  }
+        // form field validations
 
-  render(){
-      return(
-        <form>
-          <div>
-            <TextField 
-            name="name"
-            hintText="What's your name?"
-            fullWidth label="Name"
-            value={this.state.name}
-            onChange={this.handleChange}
-            />
-          </div>
-          <div>
-            <TextField 
-            name="course"
-            hintText="Course" fullWidth
-            label="course"
-            value={this.state.course}
-            onChange={this.handleChange}
-            />
-          </div>
-          <div>
-            <TextField 
-            name="bio"
-            hintText="About you"
-            fullWidth label="bio"
-            value={this.state.bio}
-            onChange={this.handleChange}
-            />
-          </div>
-          <div>
-          <input type="file"
-            name="picture"
-            value={this.state.picture}
-            onChange={this.handleChange}
+        let errorMessage = "";
+        let fieldLength = 0;
 
-          />
-          </div>
-            <div>
-              <RaisedButton type="submit" label="SAVE CHANGES" secondary={true} onClick={this.handleSubmit}/>
-            </div>
-        </form>
-      )
-  }
+        fieldLength = this.refs.name.props.value.length;
+        if (fieldLength === 0) {
+            errorMessage += "Name cannot be blank.\n"
+        } else if (fieldLength > 30) {
+            errorMessage += "Name length cannot exceed 30 characters.\n"
+        }
+
+        fieldLength = this.refs.course.props.value.length;
+        if (fieldLength === 0) {
+            errorMessage += "Course cannot be blank.\n"
+        } else if (fieldLength > 30) {
+            errorMessage += "Course length cannot exceed 30 characters.\n"
+        }
+
+        fieldLength = this.refs.bio.props.value.length;
+        if (fieldLength > 150) {
+            errorMessage += "Bio length cannot exceed 150 characters.\n"
+        }
+
+        if (this.refs.picture.files.length > 0) {
+            if (this.refs.picture.files[0].size > 2000000) {
+                errorMessage += "Picture size cannot exceed 2 MB.\n"
+            }
+        }
+
+        if (errorMessage.length > 0) {
+            errorMessage += "\nPlease correct before submitting.\n"
+            alert(errorMessage);
+        } else {
+            Meteor.call('profiles.update', this.state)
+            // redirect to ideas page after submit
+            this.props.history.push(`/profile/${Meteor.userId()}`);
+        }
+    }
+
+    handleCancel = (event) => {
+        event.preventDefault();
+
+        this.props.history.push(`/profile/${Meteor.userId()}`);
+    }
+
+    componentDidMount = () => {
+        setTimeout(() => {
+            let dbInfo = this.props.currentUser[0] !== undefined ? this.props.currentUser[0] : "...Loading";
+            this.setState({
+                name: dbInfo.name,
+                course: dbInfo.course,
+                bio: dbInfo.bio,
+            })
+        },1000);
+    }
+
+    render(){
+        return(
+            <form>
+                <div>
+                    <TextField
+                        name="name"
+                        ref="name"
+                        hintText="What's your name?"
+                        fullWidth label="Name"
+                        value={this.state.name}
+                        onChange={this.handleChange}
+                    />
+                </div>
+
+                <div>
+                    <TextField
+                        name="course"
+                        ref="course"
+                        hintText="Course" fullWidth
+                        label="course"
+                        value={this.state.course}
+                        onChange={this.handleChange}
+                    />
+                </div>
+
+                <div>
+                    <TextField
+                        name="bio"
+                        ref="bio"
+                        hintText="About you"
+                        fullWidth label="bio"
+                        value={this.state.bio}
+                        onChange={this.handleChange}
+                    />
+                </div>
+
+                <div>
+                    <input type="file"
+                        name="picture"
+                        ref="picture"
+                        value={this.state.picture}
+                        onChange={this.handleChange}
+                    />
+                </div>
+
+                <div className="saveEdit">
+                    <RaisedButton
+                        label="Save"
+                        secondary={true}
+                        onClick={this.handleSubmit}
+                    />
+                    <RaisedButton
+                        label="Cancel"
+                        onClick={this.handleCancel}
+                        backgroundColor='#757575'
+                        labelColor='#ffffff'
+                    />
+                </div>
+            </form>
+        )
+    }
 }
 
 const EProfile = withRouter(EditProfile);
@@ -97,6 +158,7 @@ const EProfile = withRouter(EditProfile);
 export default createContainer(() => {
     Meteor.subscribe('user');
     return {
-        currentUser: Profiles.find({}).fetch()
+        currentUser: Profiles.find({}).fetch(),
+        currentUserId: Meteor.userId()
     };
-  }, EProfile);
+}, EProfile);
