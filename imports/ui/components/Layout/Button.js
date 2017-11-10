@@ -31,7 +31,8 @@ class Button extends Component {
         <RaisedButton label="Sign In" style={style} labelColor="#fff">
           <AccountsUIWrapper onClick={this.onSigninClick.bind(this)} />
         </RaisedButton>
-        <Link to="/profile"><RaisedButton label="Profile" secondary={true} style={style} /></Link>
+        <Link to="/users"><RaisedButton label="Users" secondary={true} style={style} /></Link>
+        <Link to="/ideas"><RaisedButton label="Ideas" secondary={true} style={style} /></Link>
       </div>
     )
   }
