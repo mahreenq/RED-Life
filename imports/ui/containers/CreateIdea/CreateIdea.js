@@ -33,23 +33,31 @@ class CreateIdea extends Component {
         let fieldLength = 0;
 
         fieldLength = this.refs.title.props.value.length;
-        if (fieldLength > 20) {
+        if (fieldLength === 0) {
+            errorMessage += "Title cannot be blank.\n"
+        } else if (fieldLength > 20) {
             errorMessage += "Title length cannot exceed 20 characters.\n"
         }
-        if (this.refs.description.props.value.length > 150) {
+
+        fieldLength = this.refs.description.props.value.length;
+        if (fieldLength === 0) {
+            errorMessage += "Description cannot be blank.\n"
+        } else if (fieldLength > 150) {
             errorMessage += "Description length cannot exceed 150 characters.\n"
         }
+
         if (this.refs.picture.files.length > 0) {
             if (this.refs.picture.files[0].size > 2000000) {
                 errorMessage += "Picture size cannot exceed 2 MB.\n"
             }
         }
+        
         if (errorMessage.length > 0) {
             errorMessage += "\nPlease correct before submitting.\n"
             alert(errorMessage);
         } else {
             Meteor.call('ideas.insert', this.state)
-            console.log('id', this.props.ideas);
+            //console.log('id', this.props.ideas);
             // redirect to ideas page after submit
             this.props.history.push('/ideas');
         }
@@ -62,6 +70,15 @@ class CreateIdea extends Component {
     }
 
     render(){
+        let loggedIn = false;
+        let userId = this.props.currentUserId;
+
+        if (userId !== null) {
+            if (userId.length > 0) {
+                loggedIn = true;
+            }
+        }
+
         return(
             <div className="outer-body">
                 <div className="idea_form">
@@ -111,6 +128,7 @@ class CreateIdea extends Component {
                                     label="Submit"
                                     secondary={true}
                                     onClick={this.handleSubmit}
+                                    disabled={loggedIn ? false : true}
                                 />
                                 <RaisedButton
                                     label="Cancel"
@@ -130,6 +148,8 @@ class CreateIdea extends Component {
 export default createContainer(() => {
     Meteor.subscribe('ideas');
     return {
+        currentUser: Meteor.user(),
+        currentUserId: Meteor.userId(), // b/c pulling it off above breaks if logged out
         ideas: Ideas.find({}).fetch()
     }
 }, CreateIdea);
