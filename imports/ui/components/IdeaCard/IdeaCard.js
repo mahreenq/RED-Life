@@ -63,6 +63,7 @@ const IdeaCard = ({idea, removeIdea, addVote, removeVote, userId}) => {
             <CardText className="voteCount" style={styles.description}>
                 Vote Count: <span>{idea.votes.length}</span>
             </CardText>
+            
             <CardActions>
                 <div className="voteButton">
                     <RaisedButton

@@ -20,6 +20,7 @@ const styles = {
 };
 
 const Header = () => (
+    
     <div className="Header">
         <Toolbar style={styles.header}>
             <ToolbarGroup firstChild={true}>
