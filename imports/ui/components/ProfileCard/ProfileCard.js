@@ -13,7 +13,8 @@ import './styles.css';
 const ProfileCard = ({user , userVote}) => {
 
 
-
+    console.log(user._id);
+    console.log (user);
 
     let course = '';
     let bio = '';
@@ -32,6 +33,7 @@ const ProfileCard = ({user , userVote}) => {
 
 
         return (
+
    <div className="individual-profile-card">       
   <div className="product-viewer">
   <div className="header">
