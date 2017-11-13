@@ -69,7 +69,7 @@ class AdminImages extends Component{
   }
 
   handleX = (event) => {
-    console.log(event.target.value);
+    console.log(event.target.id);
     event.preventDefault();
     Meteor.call('admin.remove', this.state)
   }
@@ -105,11 +105,8 @@ class AdminImages extends Component{
           <GridTile
             key={tile.img}
             style={styles}
-            children={<RaisedButton
-              key={tile.img}
-              label="X"
-              onClick={this.handleX}
-            />}
+            children={<button id={tile.img}
+              onClick={this.handleX}>X</button>}
           />
         ))}
       </GridList>
