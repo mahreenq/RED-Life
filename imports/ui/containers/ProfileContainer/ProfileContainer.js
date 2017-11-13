@@ -15,11 +15,12 @@ class ProfileContainer extends Component {
 
   render() {
 
-  
+
 
       let usersData = this.props.profiles;
       let ideasData = this.props.ideas.length > 0 ? this.props.ideas : [];
       let userid = this.props.match.params.userid;
+      let loginUserId = this.props.currentUserId;
 
                   //MAPS THROUGH IDEAS DATA TO RETURN NEW ARRAY OF VOTES
                   //JOINS ALL VOTES INTO ONE ARRAY WITH ALL IDS THAT VOTED
@@ -42,8 +43,12 @@ class ProfileContainer extends Component {
                     })
 
       return (
-          <Profile profileData={profileData}  userVote={userVote} />
-          
+          <Profile
+            profileData={profileData}
+            userVote={userVote}
+            loginUserId={loginUserId}
+        />
+
       );
   }
 }
@@ -51,10 +56,11 @@ class ProfileContainer extends Component {
 
 
 export default createContainer(() => {
-  Meteor.subscribe('usersAndIdeas'); 
+  Meteor.subscribe('usersAndIdeas');
   return {
-    profiles: Profiles.find({}).fetch(),
-    ideas: Ideas.find({}).fetch()
-  }; 
+      currentUser: Meteor.user(),
+      currentUserId: Meteor.userId(), // b/c pulling it off above breaks if logged out
+      profiles: Profiles.find({}).fetch(),
+      ideas: Ideas.find({}).fetch()
+  };
 }, ProfileContainer);
-
