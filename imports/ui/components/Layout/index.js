@@ -7,6 +7,7 @@ class Layout extends Component {
 		super(props);
     }
     render(){
+        
         return(
         <div>
             <Header />
@@ -18,3 +19,4 @@ class Layout extends Component {
 };
 
 export default Layout;
+

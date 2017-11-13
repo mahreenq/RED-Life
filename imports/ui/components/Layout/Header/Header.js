@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import {Toolbar, ToolbarGroup, ToolbarTitle} from 'material-ui/Toolbar';
 import Button from '../Button';
 
+
 import './styles.css';
 
 const styles = {
@@ -19,9 +20,11 @@ const styles = {
     }
 };
 
+
 const Header = () => (
     
     <div className="Header">
+        
         <Toolbar style={styles.header}>
             <ToolbarGroup firstChild={true}>
             {location.pathname !== '/login' && location.pathname !== '/setupprofile' ?
