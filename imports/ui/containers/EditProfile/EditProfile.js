@@ -92,63 +92,71 @@ class EditProfile extends Component{
 
     render(){
         return(
-            <form>
-                <div>
-                    <TextField
-                        name="name"
-                        ref="name"
-                        hintText="What's your name?"
-                        fullWidth label="Name"
-                        value={this.state.name}
-                        onChange={this.handleChange}
-                    />
-                </div>
+            <div className="editOuterBody">
+                <div className="editContainer">
+                    <div className="editCard"></div>
+                    <div className="editCard">
+                        <h1 className="editTitle">EDIT PROFILE</h1>
+                        <form>
+                            <div className="editInputContainer">
+                                <TextField
+                                    name="name"
+                                    ref="name"
+                                    hintText="What's your name?"
+                                    fullWidth label="Name"
+                                    value={this.state.name}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
 
-                <div>
-                    <TextField
-                        name="course"
-                        ref="course"
-                        hintText="Course" fullWidth
-                        label="course"
-                        value={this.state.course}
-                        onChange={this.handleChange}
-                    />
-                </div>
+                            <div className="editInputContainer">
+                                <TextField
+                                    name="course"
+                                    ref="course"
+                                    hintText="Course" fullWidth
+                                    label="course"
+                                    value={this.state.course}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
 
-                <div>
-                    <TextField
-                        name="bio"
-                        ref="bio"
-                        hintText="About you"
-                        fullWidth label="bio"
-                        value={this.state.bio}
-                        onChange={this.handleChange}
-                    />
-                </div>
+                            <div className="editInputContainer">
+                                <TextField
+                                    name="bio"
+                                    ref="bio"
+                                    hintText="About you"
+                                    fullWidth label="bio"
+                                    value={this.state.bio}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
 
-                <div>
-                    <input type="file"
-                        name="picture"
-                        ref="picture"
-                        value={this.state.picture}
-                        onChange={this.handleChange}
-                    />
-                </div>
+                            <div className="editPicture">
+                                <input type="file"
+                                    name="picture"
+                                    ref="picture"
+                                    value={this.state.picture}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
 
-                <div className="saveEdit">
-                    <RaisedButton
-                        label="Save"
-                        secondary={true}
-                        onClick={this.handleSubmit}
-                    />
-                    <RaisedButton
-                        label="Cancel"
-                        onClick={this.handleCancel}
-                        backgroundColor='#757575'
-                        labelColor='#ffffff'
-                    />
+                            <div className="saveEdit">
+                                <RaisedButton
+                                    label="Save"
+                                    secondary={true}
+                                    onClick={this.handleSubmit}
+                                />
+                                <RaisedButton
+                                    label="Cancel"
+                                    onClick={this.handleCancel}
+                                    backgroundColor='#757575'
+                                    labelColor='#ffffff'
+                                />
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </form>
+            </div>
         )
     }
 }
