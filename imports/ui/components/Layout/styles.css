@@ -16,3 +16,21 @@
   .hide{
       display: none;
   }
+
+
+
+  .profileButton{
+      display: flex;
+      justify-content: flex-end;
+  }
+
+
+  .profileButton a:link {
+
+    text-decoration:none;
+ 
+}
+
+  .headerButtons{
+      display: flex;
+  }

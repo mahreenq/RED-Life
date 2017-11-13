@@ -3,6 +3,20 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {Link} from 'react-router-dom';
 import {Meteor} from 'meteor/meteor';
 import AccountsUIWrapper from '../AccountsWrapper/index.js';
+import Avatar from 'material-ui/Avatar';
+import FontIcon from 'material-ui/FontIcon';
+
+import {
+  blue300,
+  indigo900,
+  orange200,
+  deepOrange300,
+  pink400,
+  purple500,
+} from 'material-ui/styles/colors';
+
+
+// const recentsIcon = <FontIcon className="material-icons"></FontIcon>;
 
 import './styles.css';
 
@@ -26,15 +40,35 @@ class Button extends Component {
   }
 
   render(){
+    var currentUserId = Meteor.userId();
     return (
       <div className="headerButtons">
-      
-        <RaisedButton label="Sign In" style={style} labelColor="#fff">
-          <AccountsUIWrapper onClick={this.onSigninClick.bind(this)} />
-        </RaisedButton>
-      
+
+        <div className="accountsUIlogin">
+          <RaisedButton label="Sign In" style={style} labelColor="#fff">
+            <AccountsUIWrapper onClick={this.onSigninClick.bind(this)} />
+          </RaisedButton>
+        </div>
+
+
+        <div className="ideasUsersButtons">
           <Link to="/ideas"><RaisedButton label="Ideas" secondary={true} style={style} /></Link>
           <Link to="/users"><RaisedButton label="Users" secondary={true} style={style} /></Link>
+        </div>
+
+
+        <div className="profileButton">
+              <Link to={`/profile/${currentUserId}`}>
+                      <Avatar
+                        icon={<i class="material-icons ">person</i>}
+     
+                        color="#e1231a"
+                        backgroundColor="white"
+                        size={35}
+                        style={style}
+                      />
+              </Link>
+        </div>
    
 
       </div>
