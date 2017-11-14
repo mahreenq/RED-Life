@@ -34,7 +34,7 @@ const ProfileCard = ({user , userVote, loginUserId}) => {
             <div className="container">
                 <div className="card"></div>
                 <div className="card">
-                    <h1 className="title">View Profile</h1>
+                    <h1 className="title">Profile</h1>
 
                     <div className="input-container">
                         <div className="content-slider">

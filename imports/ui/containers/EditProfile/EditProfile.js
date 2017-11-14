@@ -131,14 +131,22 @@ class EditProfile extends Component{
                                 />
                             </div>
 
-                            <div className="editPicture">
+                            {/* <div className="editPicture">
                                 <input type="file"
                                     name="picture"
                                     ref="picture"
                                     value={this.state.picture}
                                     onChange={this.handleChange}
                                 />
-                            </div>
+                            </div> */}
+
+                            <div><input type="file"
+                                name="picture"
+                                ref="picture"
+                                value={this.state.picture}
+                                onChange={this.handleChange}
+                                className="foo"
+                            /></div>
 
                             <div className="saveEdit">
                                 <RaisedButton
