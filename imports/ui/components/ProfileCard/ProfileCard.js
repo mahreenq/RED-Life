@@ -42,7 +42,7 @@ const ProfileCard = ({user , userVote, loginUserId}) => {
                                 <figure>
                                     <img src="/images/grumpy_dog.jpg" alt="" />
                                     <div className="figcaption">
-                                        <span className="desc"><h3>{`Enrolled in:  ${user.course}`}</h3></span>
+                                        <span className="desc"><h3>{` ${user.course}`}</h3></span>
                                         <span className="name"><h2>{user.name}</h2></span>
                                         <span className="price">{user.bio}</span>
                                     </div>
