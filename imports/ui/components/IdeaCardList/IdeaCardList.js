@@ -23,7 +23,7 @@ const IdeaCardList = ({ideaData, removeIdea, addVote, removeVote, userId}) => (
             <Card className="ideasHeaderCard">
                 <CardTitle
                     titleStyle={styles.header}
-                    title="TAKE A LOOK THROUGH SOME GREAT IDEAS"
+                    title="TAKE A LOOK THROUGH SOME GREAT POSTS"
                     subtitleStyle = {styles.subtitle}
                     subtitle="Make sure to get involved and vote!"
                 />
@@ -32,7 +32,7 @@ const IdeaCardList = ({ideaData, removeIdea, addVote, removeVote, userId}) => (
                         <RaisedButton
                             backgroundColor= '#e1231a'
                             labelColor='#ffffff'
-                            label="SHARE YOUR OWN IDEA HERE"
+                            label="SHARE YOUR OWN POSTS HERE"
                         />
                     </Link>
                 </CardActions>
