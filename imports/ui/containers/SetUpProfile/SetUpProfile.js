@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor'
 import React, { Component } from 'react';
+import {withRouter} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
@@ -30,7 +31,8 @@ class SetUpProfile extends Component{
 
   handleSubmit = (event) => {
       event.preventDefault();
-      Meteor.call('profiles.update', this.state)
+      Meteor.call('profiles.update', this.state);
+      this.props.history.push(`/ideas`);
   }
 
   render(){
@@ -86,4 +88,5 @@ class SetUpProfile extends Component{
   }
 }
 
-export default SetUpProfile;
+const newSetUpProfile = withRouter(SetUpProfile);
+export default newSetUpProfile;

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {withRouter} from 'react-router-dom';
 import EmailPasswordForm from './EmailPasswordForm';
 
 class Register extends Component{
@@ -10,7 +11,7 @@ class Register extends Component{
       };
     }
 
-    createUser(e) {
+    createUser = (e) => {
       e.preventDefault();
       const
         email = $('#email').val(),
@@ -30,6 +31,7 @@ class Register extends Component{
           };
         }
       );
+      this.props.history.push(`/setupprofile`);
     }
 
     render() {
@@ -48,4 +50,6 @@ class Register extends Component{
     }
 };
 
-export default Register;
+const newRegister = withRouter(Register);
+
+export default newRegister;
