@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import EmailPasswordForm from './EmailPasswordForm'
 
 class Login extends Component{
-    loginWithPassword(e) {
+    loginWithPassword = (e) => {
       e.preventDefault();
       const email = $('#email').val(),
             password = $('#password').val().trim()
@@ -17,6 +17,7 @@ class Login extends Component{
           FlowRouter.go('/');
         }
       });
+      this.props.history.push(`/ideas`);
     }
 
     render() {
@@ -35,4 +36,6 @@ class Login extends Component{
       }
 };
 
-export default Login;
+const newLogin = withRouter(Login);
+
+export default newLogin;

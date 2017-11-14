@@ -20,20 +20,20 @@ const App = () => (
       <div>
         <BrowserRouter>
             <MuiThemeProvider muiTheme={muiTheme}>
-            <Layout>
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/register" component={Register} />
-                    <Route exact path="/setupprofile" component={SetUpProfile} />
-                    <Route exact path="/ideas" component={Ideas} />
-                    <Route exact path="/users" component={Users} />
-                    <Route path="/profile/:userid"  component={ProfileContainer} />
-                    <Route exact path="/createidea" component={CreateIdea} />
-                    <Route exact path="/editprofile" component={EditProfile} />
-                    <Route exact path="/gridlist" component={GridList} />
-                    <Route component={NotFound} />
-                </Switch>
-              </Layout>
+                <Layout>
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                        <Route exact path="/register" component={Register} />
+                        <Route exact path="/setupprofile" component={SetUpProfile} />
+                        <Route exact path="/ideas" component={Ideas} />
+                        <Route exact path="/users" component={Users} />
+                        <Route path="/profile/:userid"  component={ProfileContainer} />
+                        <Route exact path="/createidea" component={CreateIdea} />
+                        <Route exact path="/editprofile" component={EditProfile} />
+                        <Route exact path="/gridlist" component={GridList} />
+                        <Route component={NotFound} />
+                    </Switch>
+                </Layout>
             </MuiThemeProvider>
         </BrowserRouter>
       </div>

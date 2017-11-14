@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import {Meteor} from 'meteor/meteor';
 // import AccountsUIWrapper from '../AccountsWrapper/index.js';
 import Avatar from 'material-ui/Avatar';
@@ -19,6 +19,7 @@ import {
 // const recentsIcon = <FontIcon className="material-icons"></FontIcon>;
 
 import './styles.css';
+import { setTimeout } from 'timers';
 
 const style = {
   margin: 12,
@@ -34,27 +35,29 @@ class Button extends Component {
     });
   }
 
-  handleClick() {
+  handleClick = () => {
     console.log("worked")
     Meteor.logout((err) => console.log(err))
+    this.props.history.push(`/`);
   }
 
   render(){
-    var currentUserId = Meteor.userId();
+    console.log(this.props.history.location.pathname);
+    let pathName = this.props.history.location.pathname;
+    let currentUserId = Meteor.userId();
       return (
 
 
       <div className="headerButtons">
 
         <div className="accountsUIlogin">
-          <RaisedButton label="Sign In" style={style} labelColor="#fff">
-            {/* <AccountsUIWrapper onClick={this.onSigninClick.bind(this)} /> */}
+          <RaisedButton label="Logout" style={style} onClick={this.handleClick}>
           </RaisedButton>
         </div>
 
 
       
-       { currentUserId ? 
+       { pathName !== "/" && pathName !== "/setupprofile" && pathName !== "/register" ? 
         <div className="ideasUsersButtons">
           <Link to="/ideas"><RaisedButton label="Ideas" secondary={true} style={style} /></Link>
           <Link to="/users"><RaisedButton label="Users" secondary={true} style={style} /></Link>
@@ -64,7 +67,7 @@ class Button extends Component {
 
 
         <div className="profileButton">
-          {currentUserId ? 
+          {pathName !== "/" && pathName !== "/setupprofile" && pathName !== "/register"? 
                   <Link to={`/profile/${currentUserId}`}>
                       <Avatar
                         icon={<i class="material-icons ">person</i>}
@@ -85,4 +88,5 @@ class Button extends Component {
   }
 };
 
-export default Button;
+const newButton = withRouter(Button);
+export default newButton;

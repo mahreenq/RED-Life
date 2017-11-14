@@ -65,17 +65,17 @@ const ProfileCard = ({user , userVote, loginUserId}) => {
                     <form>
                         <div className="input-container">
                             <input type="#{type}" id="#{label}" required="required"/>
-                            <label for="#{label}">Username</label>
+                            <label htmlFor="#{label}">Username</label>
                             <div className="bar"></div>
                         </div>
                         <div className="input-container">
                             <input type="#{type}" id="#{label}" required="required"/>
-                            <label for="#{label}">Password</label>
+                            <label htmlFor="#{label}">Password</label>
                             <div className="bar"></div>
                         </div>
                         <div className="input-container">
                             <input type="#{type}" id="#{label}" required="required"/>
-                            <label for="#{label}">Repeat Password</label>
+                            <label htmlFor="#{label}">Repeat Password</label>
                             <div className="bar"></div>
                         </div>
                         <div className="button-container">
