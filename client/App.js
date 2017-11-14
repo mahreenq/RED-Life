@@ -14,7 +14,6 @@ import ProfileContainer from '../imports/ui/containers/ProfileContainer';
 import Home from '../imports/ui/components/Home';
 import GridList from '../imports/ui/containers/TempAdmin';
 import Register from '../imports/ui/components/forms/Register';
-import Login from '../imports/ui/components/forms/Login';
 
 
 const App = () => (
@@ -24,7 +23,6 @@ const App = () => (
             <Layout>
                 <Switch>
                     <Route exact path="/" component={Home} />
-                    <Route exact path="/login" component={Login} />
                     <Route exact path="/register" component={Register} />
                     <Route exact path="/setupprofile" component={SetUpProfile} />
                     <Route exact path="/ideas" component={Ideas} />
