@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Link} from 'react-router-dom';
 import {Meteor} from 'meteor/meteor';
-import AccountsUIWrapper from '../AccountsWrapper/index.js';
+// import AccountsUIWrapper from '../AccountsWrapper/index.js';
 import Avatar from 'material-ui/Avatar';
 import FontIcon from 'material-ui/FontIcon';
 
@@ -48,7 +48,7 @@ class Button extends Component {
 
         <div className="accountsUIlogin">
           <RaisedButton label="Sign In" style={style} labelColor="#fff">
-            <AccountsUIWrapper onClick={this.onSigninClick.bind(this)} />
+            {/* <AccountsUIWrapper onClick={this.onSigninClick.bind(this)} /> */}
           </RaisedButton>
         </div>
 

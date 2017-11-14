@@ -8,9 +8,13 @@ Meteor.startup(() => {
   Meteor.publish('ideas', function() {
     return Ideas.find({});
   })
-  Meteor.publish('users', function() {
-    return Profiles.find({});
-  }),
+  Meteor.publish("users", function () {
+    if (this.userId) {
+      return Meteor.users.find({_id: this.userId});
+    } else {
+      this.ready();
+    }
+  });
   Meteor.publish('user', function() {
     return Profiles.find(this.userId);
 
