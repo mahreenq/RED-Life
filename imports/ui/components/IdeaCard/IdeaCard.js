@@ -39,7 +39,7 @@ const IdeaCard = ({idea, removeIdea, addVote, removeVote, userId}) => {
     }
 
     const background = {
-        backgroundImage: 'url('+ idea.picture +')',
+        backgroundImage: 'url("/images/grumpy_Cat.jpg" )',
     }
 
     return (

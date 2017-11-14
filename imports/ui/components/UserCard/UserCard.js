@@ -33,7 +33,7 @@ const UserCard = ({user}) => {
 
 
         const background = {
-            backgroundImage: 'url('+user.picture+')', 
+            backgroundImage: 'url("/images/grumpy_dog.jpg" )', 
         }
     
 
