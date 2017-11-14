@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import {createContainer} from 'meteor/react-meteor-data';
@@ -8,8 +7,8 @@ import {Ideas} from '../../../collections/ideas';
 import './styles';
 
 class CreateIdea extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
 
         this.state = {
             title: '',

@@ -72,7 +72,7 @@ class Button extends Component {
           {pathName !== "/" && pathName !== "/setupprofile" && pathName !== "/register"? 
                   <Link to={`/profile/${currentUserId}`}>
                       <Avatar
-                        icon={<i class="material-icons ">person</i>}
+                        icon={<i className="material-icons ">person</i>}
      
                         color="#e1231a"
                         backgroundColor="white"
