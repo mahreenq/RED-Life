@@ -1,0 +1,30 @@
+.homeContainer {
+    display: flex;
+    height: 85vh; /* viewport height - header - footer */
+    border-top-style: solid;
+    border-top-color: #ffffff; /* white */
+}
+
+.homeSection {
+    background-color: #e1231a; /* red */
+    width: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff; /* white */
+    font-family: 'Roboto', sans-serif;
+}
+
+.homeSection h1 {
+    font-size: 6rem;
+}
+
+.homeSection h1 span {
+    font-size: 5rem;
+}
+
+.loginSection {
+    background-color: #9e9e9e; /* grey */
+    width: 50%;
+}
