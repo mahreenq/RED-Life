@@ -1,15 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 import EmailPasswordForm from './EmailPasswordForm'
 
 class Login extends Component{
-    getDefaultProps() {
-      let registerMsg = "Don't have an account?";
-      return {
-        registerLink: <p>{registerMsg} <a href="/register">Register</a></p>
-      };
-    }
-
     loginWithPassword(e) {
       e.preventDefault();
       const email = $('#email').val(),
@@ -34,7 +28,7 @@ class Login extends Component{
                 submitBtnLabel="Login"
                 submitAction={this.loginWithPassword}
               />
-                    {this.props.registerLink}
+                    <p>Don't have an account? <Link to="/register">Register</Link></p>
           </div>
         </div>
           )

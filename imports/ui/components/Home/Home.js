@@ -1,4 +1,5 @@
 import React from 'react';
+import Login from '../forms/Login';
 import './styles.css';
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
                 <h1>RED <span>Life</span></h1>
             </div>
             <div className="loginSection">
+            <Login />
             </div>
         </div>
     );
