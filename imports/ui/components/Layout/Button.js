@@ -41,7 +41,9 @@ class Button extends Component {
 
   render(){
     var currentUserId = Meteor.userId();
-    return (
+      return (
+
+
       <div className="headerButtons">
 
         <div className="accountsUIlogin">
@@ -51,14 +53,19 @@ class Button extends Component {
         </div>
 
 
+      
+       { currentUserId ? 
         <div className="ideasUsersButtons">
           <Link to="/ideas"><RaisedButton label="Ideas" secondary={true} style={style} /></Link>
           <Link to="/users"><RaisedButton label="Users" secondary={true} style={style} /></Link>
+         
         </div>
+        : null }
 
 
         <div className="profileButton">
-              <Link to={`/profile/${currentUserId}`}>
+          {currentUserId ? 
+                  <Link to={`/profile/${currentUserId}`}>
                       <Avatar
                         icon={<i class="material-icons ">person</i>}
      
@@ -67,11 +74,13 @@ class Button extends Component {
                         size={35}
                         style={style}
                       />
-              </Link>
+                     </Link>  : null }
         </div>
-   
+        
 
+  
       </div>
+      
     )
   }
 };

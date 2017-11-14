@@ -52,7 +52,7 @@ class SetUpProfile extends Component{
 
             <div className="input-container">
                 <TextField name="course"
-                hintText="Course" fullWidth
+                hintText="eg Enrolled in Web Dev , Staff Member" fullWidth
                 label="course"
                 value={this.state.course}
                 onChange={this.handleChange}
