@@ -49,7 +49,7 @@ const UserCard = ({user}) => {
 
             <div className="userNameButton">
                 <div>
-                <CardTitle title={user.name} subtitle={`Enrolled in ${course}`} titleColor="#e1231a" subtitleColor="#212121" />
+                <CardTitle title={user.name} subtitle={` ${course}`} titleColor="#e1231a" subtitleColor="#212121" />
                 </div>
  
                 <Link to={`/profile/${user._id}`}>

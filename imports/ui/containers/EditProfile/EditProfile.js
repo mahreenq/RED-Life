@@ -113,7 +113,7 @@ class EditProfile extends Component{
                                 <TextField
                                     name="course"
                                     ref="course"
-                                    hintText="Course" fullWidth
+                                    hintText="eg Enrolled in Web Dev , Staff Member" fullWidth
                                     label="course"
                                     value={this.state.course}
                                     onChange={this.handleChange}
