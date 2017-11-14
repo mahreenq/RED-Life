@@ -35,14 +35,20 @@ class Button extends Component {
     });
   }
 
-  handleClick = () => {
-    console.log("worked")
-    Meteor.logout((err) => console.log(err))
-    this.props.history.push(`/`);
+  // handleClick = () => {
+  //   this.props.history.push(`/`);
+  //   Meteor.logout((err) => console.log('There was an error', err));
+  // }
+
+  handleClick() {
+    Meteor.logout();
+    setTimeout(() => {
+      this.props.history.push('/');
+    }, 100)
+    
   }
 
   render(){
-    console.log(this.props.history.location.pathname);
     let pathName = this.props.history.location.pathname;
     let currentUserId = Meteor.userId();
       return (
@@ -50,16 +56,12 @@ class Button extends Component {
 
       <div className="headerButtons">
 
-        <div className="accountsUIlogin">
-          <RaisedButton label="Logout" style={style} onClick={this.handleClick}>
-          </RaisedButton>
-        </div>
-
 
       
        { pathName !== "/" && pathName !== "/setupprofile" && pathName !== "/register" ? 
         <div className="ideasUsersButtons">
-          <Link to="/ideas"><RaisedButton label="Ideas" secondary={true} style={style} /></Link>
+          <RaisedButton label="Logout" style={style} onClick={(e) => this.handleClick(e)}/>
+          <Link to="/ideas"><RaisedButton label="Posts" secondary={true} style={style} /></Link>
           <Link to="/users"><RaisedButton label="Users" secondary={true} style={style} /></Link>
          
         </div>

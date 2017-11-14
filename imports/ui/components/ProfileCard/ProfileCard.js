@@ -40,7 +40,7 @@ const ProfileCard = ({user , userVote, loginUserId}) => {
                         <div className="content-slider">
                             <div className="slider-item">
                                 <figure>
-                                    <img src="/images/grumpy_dog.jpg" alt="" />
+                                    <img src={user.picture} alt="" />
                                     <div className="figcaption">
                                         <span className="desc"><h3>{` ${user.course}`}</h3></span>
                                         <span className="name"><h2>{user.name}</h2></span>

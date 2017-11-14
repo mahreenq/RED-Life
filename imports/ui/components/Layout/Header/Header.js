@@ -31,7 +31,7 @@ const Header = () => (
                 <Link to="/ideas">
                     <img src="/images/red-logo.png" alt="red logo" className="logo" />
                 </Link> : <img src="/images/red-logo.png" alt="red logo" className="logo" />}
-                <ToolbarTitle text="Events" style={styles.title} />
+                <ToolbarTitle text="Life" style={styles.title} />
             </ToolbarGroup>
             <ToolbarGroup lastChild={true}>
             {location.pathname !== '/login' && location.pathname !== '/setupprofile' ? <Button /> : null}

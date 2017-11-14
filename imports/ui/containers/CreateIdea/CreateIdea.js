@@ -83,7 +83,7 @@ class CreateIdea extends Component {
             <div className="outer-body">
                 <div className="idea_form">
                     <div className="title">
-                        Create Idea for Friday Social !
+                        Submit a post!
                     </div>
                     <br />
 

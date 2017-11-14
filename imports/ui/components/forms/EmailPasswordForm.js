@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 class EmailPasswordForm extends Component{
-    getDefaultProps() {
-      return {
-        submitBtnLabel: "Submit"
-      };
-    }
+    // getDefaultProps() {
+    //   return {
+    //     submitBtnLabel: "Submit"
+    //   };
+    // }
 
     render() {
       return (

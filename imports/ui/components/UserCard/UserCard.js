@@ -33,7 +33,7 @@ const UserCard = ({user}) => {
 
 
         const background = {
-            backgroundImage: 'url("/images/grumpy_dog.jpg" )', 
+            backgroundImage: 'url('+user.picture+')', 
         }
     
 
@@ -67,9 +67,3 @@ const UserCard = ({user}) => {
 
 export default UserCard;
 
-// <CardMedia
-// overlay={<CardTitle title={user.name} subtitle={`Enrolled in ${user.course}`}  />}
-// >
-// <img src={user.avatar} alt="" />
-// </CardMedia>
-//<CardTitle  subtitle={`Bio:  ${user.bio}`} />

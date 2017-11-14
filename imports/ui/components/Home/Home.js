@@ -1,18 +1,26 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Login from '../forms/Login';
+import {withRouter} from 'react-router-dom';
 import './styles.css';
 
-const Home = () => {
-    return (
-        <div className="homeContainer">
-            <div className="homeSection">
-                <h1>RED <span>Life</span></h1>
+class Home extends Component {
+    componentWillMount(){
+        Meteor.userId() ? this.props.history.push(`/ideas`) : null;
+    }
+
+    render(){
+        return (
+            <div className="homeContainer">
+                <div className="homeSection">
+                    <h1>RED <span>Life</span></h1>
+                </div>
+                <div className="loginSection">
+                <Login />
+                </div>
             </div>
-            <div className="loginSection">
-            <Login />
-            </div>
-        </div>
-    );
+            );
+    }
 }
 
-export default Home;
+const newHome = withRouter(Home);
+export default newHome;
