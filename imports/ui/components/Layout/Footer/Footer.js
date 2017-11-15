@@ -12,10 +12,10 @@ const recentsIcon = <FontIcon className="material-icons"></FontIcon>;
 
 
 class Footer extends Component {
- 
+
   render() {
     var currentUserId = Meteor.userId();
-  
+
     return (
       <div className="footer">
 
@@ -23,7 +23,7 @@ class Footer extends Component {
               <Paper zDepth={1}>
                 <BottomNavigation>
                   <BottomNavigationItem
-                    label="Copyright &copy; 2017 Events"
+                    label="Copyright &copy; 2017 RED Life"
                     icon={recentsIcon}
                   />
                 </BottomNavigation>
@@ -39,4 +39,3 @@ export default Footer;
 
 
 console.log(Meteor.userId());
-
