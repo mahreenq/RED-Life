@@ -8,6 +8,8 @@ import TextField from 'material-ui/TextField';
 import MenuItem from 'material-ui/MenuItem';
 import {createContainer} from 'meteor/react-meteor-data';
 import {Profiles} from '../../../collections/profiles';
+import SelectField from 'material-ui/SelectField';
+
 
 import './styles';
 
@@ -27,7 +29,7 @@ class EditProfile extends Component{
         this.setState({
             [event.target.name]: event.target.value,
         })
-        //console.log(this.state)
+        console.log(this.state)
     }
 
     handleSubmit = (event) => {
@@ -45,12 +47,12 @@ class EditProfile extends Component{
             errorMessage += "Name length cannot exceed 30 characters.\n"
         }
 
-        fieldLength = this.refs.course.props.value.length;
-        if (fieldLength === 0) {
-            errorMessage += "Course cannot be blank.\n"
-        } else if (fieldLength > 30) {
-            errorMessage += "Course length cannot exceed 30 characters.\n"
-        }
+        // fieldLength = this.refs.course.props.value.length;
+        // if (fieldLength === 0) {
+        //     errorMessage += "Course cannot be blank.\n"
+        // } else if (fieldLength > 30) {
+        //     errorMessage += "Course length cannot exceed 30 characters.\n"
+        // }
 
         fieldLength = this.refs.bio.props.value.length;
         if (fieldLength > 150) {
@@ -110,14 +112,28 @@ class EditProfile extends Component{
                             </div>
 
                             <div className="editInputContainer">
-                                <TextField
+                                {/* <TextField
                                     name="course"
                                     ref="course"
                                     hintText="eg Enrolled in Web Dev , Staff Member" fullWidth
                                     label="course"
                                     value={this.state.course}
                                     onChange={this.handleChange}
-                                />
+                                /> */}
+                                <SelectField
+                                    floatingLabelText="SELECT YOUR COURSE"
+                                    value={this.state.course}
+                                    onChange={this.handleChange}
+                                    name="course"
+                                    ref="course"
+                                    >
+                                    <MenuItem value="UX Designer Professional" primaryText="UX Designer Professional" />
+                                    <MenuItem value="UI Designer Professional" primaryText="UI Designer Professional" />
+                                    <MenuItem value="Web Developer Professional" primaryText="Web Developer Professional" />
+                                    <MenuItem value="Application Developer Professional" primaryText="Application Developer Professional" />
+                                    <MenuItem value="Digital Marketing Professional" primaryText="Digital Marketing Professional" />
+                                    <MenuItem value="RED Staff" primaryText="RED Staff" />
+                                </SelectField>
                             </div>
 
                             <div className="editInputContainer">
