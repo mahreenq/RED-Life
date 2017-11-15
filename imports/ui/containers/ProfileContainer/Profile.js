@@ -16,11 +16,9 @@ const Profile = ({profileData, userVote, loginUserId}) => {
                         user={user}
                         userVote={userVote}
                         loginUserId={loginUserId}
+               
                     />
                 )}
-
-              {/* {ideasData.map(idea =>
-                    <ProfileCard key={idea._id} idea={idea} />  )} */}
                 </div>
 
         </div>
