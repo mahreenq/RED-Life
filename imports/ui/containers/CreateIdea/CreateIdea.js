@@ -90,7 +90,6 @@ class CreateIdea extends Component {
                         <div>
                             <TextField
                                 hintText="Title"
-                                errorText="This field is required"
                                 type="text"
                                 name="title"
                                 ref="title"
@@ -102,7 +101,6 @@ class CreateIdea extends Component {
                         <div>
                             <TextField
                                 hintText="Description"
-                                errorText="This field is required."
                                 floatingLabelText="Enter idea description here"
                                 multiLine={true}
                                 rows={3}

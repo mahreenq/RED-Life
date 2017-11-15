@@ -12,7 +12,7 @@ Meteor.methods({
     },
 
     'ideas.removeIdea' (idea) {
-        if (idea.owner !== this.userId) {
+        if (idea.owner !== this.userId  && Meteor.user().emails[0].address !== 'admin@red.com') {
             throw new Meteor.Error('ideas.idea.removeIdea.not-authorized',
                 'You are not allowed to remove ideas for other users.');
         }

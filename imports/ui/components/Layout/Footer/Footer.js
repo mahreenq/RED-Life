@@ -38,4 +38,4 @@ export default Footer;
 
 
 
-console.log(Meteor.userId());
+

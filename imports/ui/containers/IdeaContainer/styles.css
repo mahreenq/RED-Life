@@ -1,7 +1,7 @@
 .appContent {
   /*display: flex;
-  flex-direction: column;
-  min-height: 100%;*/
+  flex-direction: column; */
+  min-height: 100vh;
 }
 
 .appIdeas {
@@ -12,6 +12,7 @@
   max-width: 71rem;
   width: 100%;*/
   margin: 0 10% 0 10%;
+
 
   /*justify-content: center;*/
 }
