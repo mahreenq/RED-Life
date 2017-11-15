@@ -31,8 +31,45 @@ class SetUpProfile extends Component{
 
   handleSubmit = (event) => {
       event.preventDefault();
-      Meteor.call('profiles.update', this.state);
-      this.props.history.push(`/ideas`);
+
+      // form field validations
+
+      let errorMessage = "";
+      let fieldLength = 0;
+
+      fieldLength = this.refs.name.props.value.length;
+      if (fieldLength === 0) {
+          errorMessage += "Name cannot be blank.\n"
+      } else if (fieldLength > 30) {
+          errorMessage += "Name length cannot exceed 30 characters.\n"
+      }
+
+      fieldLength = this.refs.course.props.value.length;
+      if (fieldLength === 0) {
+          errorMessage += "Course cannot be blank.\n"
+      } else if (fieldLength > 30) {
+          errorMessage += "Course length cannot exceed 30 characters.\n"
+      }
+
+      fieldLength = this.refs.bio.props.value.length;
+      if (fieldLength > 150) {
+          errorMessage += "Bio length cannot exceed 150 characters.\n"
+      }
+
+      if (this.refs.picture.files.length > 0) {
+          if (this.refs.picture.files[0].size > 500000) {
+              errorMessage += "Picture size cannot exceed 500 KB.\n"
+          }
+      }
+
+      if (errorMessage.length > 0) {
+          errorMessage += "\nPlease correct before submitting.\n"
+          alert(errorMessage);
+      } else {
+          Meteor.call('profiles.update', this.state)
+          // redirect to ideas page after submit
+          this.props.history.push(`/ideas`);
+      }
   }
 
   render(){
@@ -45,6 +82,7 @@ class SetUpProfile extends Component{
           <form>
             <div className="input-container">
                 <TextField name="name"
+                ref="name"
                 hintText="What's your name?"
                 fullWidth label="Name"
                 value={this.state.name}
@@ -54,6 +92,7 @@ class SetUpProfile extends Component{
 
             <div className="input-container">
                 <TextField name="course"
+                ref="course"
                 hintText="eg Enrolled in Web Dev , Staff Member" fullWidth
                 label="course"
                 value={this.state.course}
@@ -63,6 +102,7 @@ class SetUpProfile extends Component{
 
             <div className="input-container">
                 <TextField name="bio"
+                ref="bio"
                 hintText="About you"
                 fullWidth label="bio"
                 value={this.state.bio}
@@ -72,6 +112,7 @@ class SetUpProfile extends Component{
 
             <div><input type="file"
                     name="picture"
+                    ref="picture"
                     value={this.state.picture}
                     onChange={this.handleChange}
                     className="foo"
