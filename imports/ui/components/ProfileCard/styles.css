@@ -458,3 +458,7 @@
     position: absolute;
     padding: 1rem 9rem;
   }
+
+  .IdeasSubmitted{
+    text-align: center;
+  }

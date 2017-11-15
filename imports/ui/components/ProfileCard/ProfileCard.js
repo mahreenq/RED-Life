@@ -49,6 +49,7 @@ const ProfileCard = ({user , userVote, loginUserId}) => {
                                 <div className="bar"></div>
                             </div>
                             <div className="VoteCountContainer"><a href="#" className="VoteCount">{`Voted: ${userVote}`}</a></div>
+                           
                         </div>
                     </div>
                 </div>

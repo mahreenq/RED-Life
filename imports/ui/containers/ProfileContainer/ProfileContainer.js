@@ -21,6 +21,7 @@ class ProfileContainer extends Component {
       let ideasData = this.props.ideas.length > 0 ? this.props.ideas : [];
       let userid = this.props.match.params.userid;
       let loginUserId = this.props.currentUserId;
+      let ideas = this.props.ideas;
 
                   //MAPS THROUGH IDEAS DATA TO RETURN NEW ARRAY OF VOTES
                   //JOINS ALL VOTES INTO ONE ARRAY WITH ALL IDS THAT VOTED
@@ -36,6 +37,22 @@ class ProfileContainer extends Component {
                       userVote++;
                   }
 
+                    var profileIdeaCount = ideasData.filter(function(idea){
+                      return(
+                        idea.owner === loginUserId
+                      );
+                    }).map(function(idea){
+                      return idea.title;
+                    });
+   
+
+                    // var profileIdea = ideasData.map(function(idea){
+                    //   return(
+                    //     idea.owner && idea.description
+                    //   );
+                    // })
+                    // console.log(profileIdea);
+
                     let profileData = usersData.filter((user) => {
                       return (
                         userid === user._id
@@ -47,6 +64,8 @@ class ProfileContainer extends Component {
             profileData={profileData}
             userVote={userVote}
             loginUserId={loginUserId}
+            ideas = {ideas}
+
         />
 
       );
