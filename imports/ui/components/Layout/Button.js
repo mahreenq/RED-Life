@@ -48,9 +48,18 @@ class Button extends Component {
     
   }
 
+  onHandleClick() {
+    setTimeout(() => {
+      this.props.history.push(`/profile/${Meteor.userId()}`)
+    }, 100)
+  }
+
   render(){
     let pathName = this.props.history.location.pathname;
-    let currentUserId = Meteor.userId();
+    console.log('User', Meteor.userId());
+    Meteor.startup(() => {
+      
+    })
       return (
 
 
@@ -70,7 +79,7 @@ class Button extends Component {
 
         <div className="profileButton">
           {pathName !== "/" && pathName !== "/setupprofile" && pathName !== "/register"? 
-                  <Link to={`/profile/${currentUserId}`}>
+                  <Link to={'/'} onClick={this.onHandleClick.bind(this)}>
                       <Avatar
                         icon={<i className="material-icons ">person</i>}
      
