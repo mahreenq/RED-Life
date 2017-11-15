@@ -56,7 +56,7 @@ class Button extends Component {
 
   render(){
     let pathName = this.props.history.location.pathname;
-    console.log('User', Meteor.userId());
+    
     Meteor.startup(() => {
       
     })

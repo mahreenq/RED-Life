@@ -20,6 +20,10 @@ const styles = {
 };
 
 const IdeaCard = ({idea, removeIdea, addVote, removeVote, userId}) => {
+
+
+    let email = Meteor.user() ? Meteor.user().emails[0].address : "" ;
+ 
     let titleColor = "red";
     let updateVote = addVote;
     let buttonLabel = "Vote";
@@ -74,7 +78,7 @@ const IdeaCard = ({idea, removeIdea, addVote, removeVote, userId}) => {
                         style={styles.button}
                         disabled={loggedIn ? false : true}
                     />
-                    {idea.owner === userId ?
+                    {idea.owner === userId || email === 'admin@red.com' ? 
                         <RaisedButton
                             label='Remove'
                             onClick={removeIdea}

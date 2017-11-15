@@ -11,8 +11,7 @@ import SetupProfile from '../../containers/SetUpProfile/index.js';
 import './styles.css';
 
 const ProfileCard = ({user , userVote, loginUserId}) => {
-    console.log(user._id);
-    console.log (user);
+
 
     let course = '';
     let bio = '';
