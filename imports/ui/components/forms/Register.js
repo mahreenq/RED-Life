@@ -51,7 +51,6 @@ class Register extends Component{
             function(error) {
               if (error) {
                   errorMessage = "There was an error: " + error.reason;
-                  console.log(errorMessage);
                   alert(errorMessage);
               } else {
                   thisProps.history.push(`/setupprofile`);
