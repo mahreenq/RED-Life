@@ -41,20 +41,23 @@ class Register extends Component{
           errorMessage += "\nPlease correct before submitting.\n"
           alert(errorMessage);
       } else {
+          const thisProps = this.props;
+
           Accounts.createUser(
             {
-              email: email,
-              password: password
+                email: email,
+                password: password
             },
             function(error) {
               if (error) {
-                console.log("there was an error: " + error.reason);
+                  errorMessage = "There was an error: " + error.reason;
+                  console.log(errorMessage);
+                  alert(errorMessage);
               } else {
-                FlowRouter.go('home');
+                  thisProps.history.push(`/setupprofile`);
               };
             }
           );
-          this.props.history.push(`/setupprofile`);
       }
     }
 
