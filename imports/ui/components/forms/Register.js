@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {withRouter} from 'react-router-dom';
 import EmailPasswordForm from './EmailPasswordForm';
+import './styles.css';
 
 class Register extends Component{
     getDefaultProps() {
@@ -17,7 +18,7 @@ class Register extends Component{
         email = $('#email').val(),
         password = $('#password').val().trim()
       ;
-  
+
       Accounts.createUser(
         {
           email: email,
@@ -26,7 +27,7 @@ class Register extends Component{
         function(error) {
           if (error) {
             console.log("there was an error: " + error.reason);
-          } else { 
+          } else {
             FlowRouter.go('home');
           };
         }
@@ -36,8 +37,8 @@ class Register extends Component{
 
     render() {
       return (
-        <div className="row">
-          <div className="col-md-6 col-md-offset-3">
+        <div className="registerContainer row">
+          <div className="registerSection col-md-6 col-md-offset-3">
             <h1>Register</h1>
               <EmailPasswordForm
                 submitBtnLabel="Register"

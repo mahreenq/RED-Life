@@ -9,7 +9,7 @@ class Login extends Component{
       const email = $('#email').val(),
             password = $('#password').val().trim()
       ;
-  
+
       Meteor.loginWithPassword(email, password, function(error) {
         if (error) {
           console.log("There was an error:" + error.reason);

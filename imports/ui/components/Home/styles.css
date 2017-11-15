@@ -27,4 +27,10 @@
 .loginSection {
     background-color: #9e9e9e; /* grey */
     width: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
 }
