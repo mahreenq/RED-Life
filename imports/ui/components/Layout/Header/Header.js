@@ -27,7 +27,7 @@ const Header = () => (
         
         <Toolbar style={styles.header}>
             <ToolbarGroup firstChild={true}>
-            {location.pathname !== '/login' && location.pathname !== '/setupprofile' ?
+            {location.pathname !== '/login' && location.pathname !== '/setupprofile' && location.pathname !== '/register' && location.pathname !== '/'?
                 <Link to="/ideas">
                     <img src="/images/red-logo.png" alt="red logo" className="logo" />
                 </Link> : <img src="/images/red-logo.png" alt="red logo" className="logo" />}
