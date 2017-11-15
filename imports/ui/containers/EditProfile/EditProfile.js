@@ -58,8 +58,8 @@ class EditProfile extends Component{
         }
 
         if (this.refs.picture.files.length > 0) {
-            if (this.refs.picture.files[0].size > 2000000) {
-                errorMessage += "Picture size cannot exceed 2 MB.\n"
+            if (this.refs.picture.files[0].size > 500000) {
+                errorMessage += "Picture size cannot exceed 500 KB.\n"
             }
         }
 
