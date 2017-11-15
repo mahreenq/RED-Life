@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Link, withRouter} from 'react-router-dom';
 import {Meteor} from 'meteor/meteor';
-// import AccountsUIWrapper from '../AccountsWrapper/index.js';
 import Avatar from 'material-ui/Avatar';
 import FontIcon from 'material-ui/FontIcon';
 
@@ -14,9 +13,6 @@ import {
   pink400,
   purple500,
 } from 'material-ui/styles/colors';
-
-
-// const recentsIcon = <FontIcon className="material-icons"></FontIcon>;
 
 import './styles.css';
 import { setTimeout } from 'timers';
@@ -35,11 +31,6 @@ class Button extends Component {
     });
   }
 
-  // handleClick = () => {
-  //   this.props.history.push(`/`);
-  //   Meteor.logout((err) => console.log('There was an error', err));
-  // }
-
   handleClick() {
     Meteor.logout();
     setTimeout(() => {
@@ -56,7 +47,7 @@ class Button extends Component {
 
   render(){
     let pathName = this.props.history.location.pathname;
-    
+    console.log('User', Meteor.userId());
     Meteor.startup(() => {
       
     })
