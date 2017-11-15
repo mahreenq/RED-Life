@@ -14,7 +14,19 @@ class Login extends Component{
         if (error) {
           console.log("There was an error:" + error.reason);
         } else {
-          FlowRouter.go('/');
+            const thisProps = this.props;
+
+            Meteor.loginWithPassword(email, password, function(error) {
+                if (error) {
+                    errorMessage = "There was an error: " + error.reason;
+                    console.log(errorMessage);
+                    alert(errorMessage);
+                } else {
+                    thisProps.history.push('/ideas')
+                }
+            });
+
+            //this.props.history.push(`/ideas`);
         }
       });
       this.props.history.push(`/ideas`);
