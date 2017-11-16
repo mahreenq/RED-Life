@@ -31,7 +31,7 @@
 }
 
 .registerContainer {
-    height: 85vh; /* viewport height - header - footer */
+    height: 95vh; /* viewport height - header - footer */
 }
 
 .registerSection {
@@ -43,11 +43,12 @@
     justify-content: center;
     align-items: center;
     font-family: 'Roboto', sans-serif;
-     background:/* radial-gradient(
-        rgba(218, 209, 209, 0.637),
-        rgb(10, 1, 1)),  */
-      url("/images/grid.jpg");
-      background-position: cover;
+    background: 
+    url("/images/toronto-skyline-outline-silhouette.png"), #e01710 ;
+      background-position:  bottom;
+      background-repeat: no-repeat;
+      color: white;
+
 }
 
 .registerButtonHomePage a{

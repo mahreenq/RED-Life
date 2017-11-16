@@ -1,6 +1,6 @@
 .homeContainer {
     display: flex;
-    height: 85vh; /* viewport height - header - footer */
+    height: 95vh; /* viewport height - header - footer */
     border-top-style: solid;
     border-top-color: #ffffff; /* white */
  
@@ -31,25 +31,20 @@
     font-size: 5rem;
 }
 
+
 .loginSection {
     /* background-color: #e8e8e8; grey */
-
-
+    background-color: white;
 
     
-    background: /*linear-gradient(
-        rgb(2, 0, 0),
-        rgba(0, 0, 0, 0.3)), */
-      url("/images/toronto-skyline-outline-silhouette.jpg");
+    background: 
+      url("/images/toronto-skyline-outline-silhouette.png"), white;
+
       background-position: bottom left;
       background-repeat: no-repeat;
+      background-size: 100%;
   
     
-
-
-    border-bottom: 2px solid #e1231a;
-    
-  
     width: 50%;
     text-align: center;
     display: flex;
