@@ -3,16 +3,15 @@ import PropTypes from 'prop-types';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import { Link } from 'react-router-dom';
-import {Profiles} from '../../../collections/profiles';
 import {createContainer} from 'meteor/react-meteor-data';
+import Gravatar from 'react-gravatar'
 
+import {Profiles} from '../../../collections/profiles';
 import SetupProfile from '../../containers/SetUpProfile/index.js';
 
 import './styles.css';
 
 const ProfileCard = ({user , userVote, loginUserId}) => {
-
-
     let course = '';
     let bio = '';
 
@@ -39,7 +38,9 @@ const ProfileCard = ({user , userVote, loginUserId}) => {
                         <div className="content-slider">
                             <div className="slider-item">
                                 <figure>
-                                    <img src="/images/grumpy_dog.jpg" alt="" />
+                                    <CardHeader className="profileImage"
+                                        avatar={<Gravatar email={user.emails[0].address} size={500}/>}
+                                    />
                                     <div className="figcaption">
                                         <span className="desc"><h3>{` ${user.course}`}</h3></span>
                                         <span className="name"><h2>{user.name}</h2></span>
@@ -49,7 +50,7 @@ const ProfileCard = ({user , userVote, loginUserId}) => {
                                 <div className="bar"></div>
                             </div>
                             <div className="VoteCountContainer"><a href="#" className="VoteCount">{`Voted: ${userVote}`}</a></div>
-                           
+
                         </div>
                     </div>
                 </div>
