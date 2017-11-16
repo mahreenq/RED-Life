@@ -16,12 +16,17 @@
     }
 }
 
-.userImage {
+/*.userImage {
     display: flex;
     justify-content: center;
 }
 .userImage div {
     width: 90%;
+}*/
+
+.userImage img {
+    height: 100%;
+    max-width: 100%;
 }
 
 .viewButton {
@@ -53,7 +58,7 @@
 
 
 
-/* 
+/*
 
 
 .userCard{

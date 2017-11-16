@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import { Link } from 'react-router-dom';
+import Gravatar from 'react-gravatar'
+
 import {Profiles} from '../../../collections/profiles';
 import {createContainer} from 'meteor/react-meteor-data';
 
@@ -16,42 +18,37 @@ const styles = {
 };
 
 const UserCard = ({user}) => {
-        let course = '';
-        let bio = '';
+    let course = '';
+    let bio = '';
 
-        if (user.course !== undefined) {
-            course = user.course;
-        } else {
-            course = 'unknown';
-        }
+    if (user.course !== undefined) {
+        course = user.course;
+    } else {
+        course = 'unknown';
+    }
 
-        if (user.bio !== undefined) {
-            bio = user.bio;
-        } else {
-            bio = 'None';
-        }
+    if (user.bio !== undefined) {
+        bio = user.bio;
+    } else {
+        bio = 'None';
+    }
 
+    const background = {
+        backgroundImage: 'url("/images/grumpy_dog.jpg" )',
+    }
 
-        const background = {
-            backgroundImage: 'url("/images/grumpy_dog.jpg" )', 
-        }
-    
-
-        return (
-        //const logged_in_user = Meteor.userId();
-            <Card className="userCard">
-                <CardMedia className="userImage" >
-                    <div className = "userCardImage"  style={background}>
-         
-                    </div>
-                </CardMedia>
-
+    return (
+    //const logged_in_user = Meteor.userId();
+        <Card className="userCard">
+            <CardHeader className="userImage"
+                avatar={<Gravatar email={user.emails[0].address} size={500}/>}
+            />
 
             <div className="userNameButton">
                 <div>
                 <CardTitle title={user.name} subtitle={` ${course}`} titleColor="#e1231a" subtitleColor="#212121" />
                 </div>
- 
+
                 <Link to={`/profile/${user._id}`}>
                     <CardActions>
                         <div className="viewButton">
@@ -62,8 +59,7 @@ const UserCard = ({user}) => {
             </div>
 
         </Card>
-        )
+    )
 };
 
 export default UserCard;
-

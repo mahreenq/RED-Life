@@ -7,12 +7,13 @@ import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import MenuItem from 'material-ui/MenuItem';
 import {createContainer} from 'meteor/react-meteor-data';
+import {CardHeader} from 'material-ui/Card';
+import Gravatar from 'react-gravatar'
+
 import {Profiles} from '../../../collections/profiles';
 import SelectField from 'material-ui/SelectField';
 
-
 import './styles';
-
 
 class EditProfile extends Component{
     constructor(props){
@@ -24,18 +25,15 @@ class EditProfile extends Component{
             bio: '',
             picture: ''
         }
-        
     }
 
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value,
         })
-     
+
     }
      handleDropDown = (event, index, course) => this.setState({course});
-    
-    
 
     handleSubmit = (event) => {
         event.preventDefault();
@@ -55,18 +53,18 @@ class EditProfile extends Component{
         fieldLength = this.refs.course.props.value.length;
         if (fieldLength === 0) {
             errorMessage += "Course cannot be blank.\n"
-         } 
+         }
 
         fieldLength = this.refs.bio.props.value.length;
         if (fieldLength > 150) {
             errorMessage += "Bio length cannot exceed 150 characters.\n"
         }
 
-        if (this.refs.picture.files.length > 0) {
-            if (this.refs.picture.files[0].size > 500000) {
-                errorMessage += "Picture size cannot exceed 500 KB.\n"
-            }
-        }
+        // if (this.refs.picture.files.length > 0) {
+        //     if (this.refs.picture.files[0].size > 500000) {
+        //         errorMessage += "Picture size cannot exceed 500 KB.\n"
+        //     }
+        // }
 
         if (errorMessage.length > 0) {
             errorMessage += "\nPlease correct before submitting.\n"
@@ -91,18 +89,26 @@ class EditProfile extends Component{
                 name: dbInfo.name,
                 course: dbInfo.course,
                 bio: dbInfo.bio,
+                email: dbInfo.emails[0].address
             })
 
         },1000);
     }
 
     render(){
+        console.log(this.state.email);
+
         return(
             <div className="editOuterBody">
                 <div className="editContainer">
                     <div className="editCard"></div>
                     <div className="editCard">
                         <h1 className="editTitle">EDIT PROFILE</h1>
+                        {this.state.email !== undefined ?
+                        <CardHeader className="editImage"
+                            avatar={<Gravatar email={this.state.email} size={500}/>}
+                        />
+                        : ''}
                         <form>
                             <div className="editInputContainer">
                                 <TextField
@@ -116,7 +122,7 @@ class EditProfile extends Component{
                             </div>
 
                             <div className="editInputContainer">
-                     
+
                                 <SelectField
                                     hintText= "Select Your Course" fullWidth
                                     value={this.state.course}
@@ -153,13 +159,13 @@ class EditProfile extends Component{
                                 />
                             </div> */}
 
-                            <div><input type="file"
+                            {/* <div><input type="file"
                                 name="picture"
                                 ref="picture"
                                 value={this.state.picture}
                                 onChange={this.handleChange}
                                 className="foo"
-                            /></div>
+                            /></div> */}
 
                             <div className="saveEdit">
                                 <RaisedButton
