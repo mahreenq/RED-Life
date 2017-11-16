@@ -30,13 +30,14 @@ class ensureLoggedIn extends Component {
 
     render() {
         return (<div>
-                        <Route exact path="/setupprofile" component={SetUpProfile} />
-                        <Route exact path="/ideas" component={Ideas} />
-                        <Route exact path="/users" component={Users} />
-                        <Route path="/profile/:userid"  component={ProfileContainer} />
-                        <Route exact path="/createidea" component={CreateIdea} />
-                        <Route exact path="/editprofile" component={EditProfile} />
-        </div>)
+                    <Route exact path="/setupprofile" component={SetUpProfile} />
+                    <Route exact path="/ideas" component={Ideas} />
+                    <Route exact path="/users" component={Users} />
+                    <Route path="/profile/:userid"  component={ProfileContainer} />
+                    <Route exact path="/createidea" component={CreateIdea} />
+                    <Route exact path="/editprofile" component={EditProfile} />
+                </div>
+        )
     }
 }
 

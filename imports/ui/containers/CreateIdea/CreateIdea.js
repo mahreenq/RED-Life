@@ -3,8 +3,45 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import {createContainer} from 'meteor/react-meteor-data';
 import {Ideas} from '../../../collections/ideas';
+// import Images from '../IdeaImages';
+import {GridList, GridTile} from 'material-ui/GridList';
+import IconButton from 'material-ui/IconButton';
+import Subheader from 'material-ui/Subheader';
+import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 
 import './styles';
+
+const styles = {
+    root: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-around',
+    },
+    gridList: {
+      width: 500,
+      height: 450,
+      overflowY: 'auto',
+    },
+  };
+  
+  const tilesData = [
+    {
+      img: './images/event.jpg',
+      title: 'Event Idea',
+    },
+    {
+      img: './images/beer.png',
+      title: 'Friday Social Idea',
+    },
+    {
+      img: './images/random.jpg',
+      title: 'Random',
+    },
+    {
+      img: './images/news.png',
+      title: 'Staff Announcement',
+    },
+  ];
 
 class CreateIdea extends Component {
     constructor(props){
@@ -15,6 +52,11 @@ class CreateIdea extends Component {
             description: '',
             picture: ''
         }
+    }
+
+    handleClick(tile) {
+        this.setState({picture: tile.img})
+        console.log(this.state)
     }
 
     handleChange = (event) => {
@@ -45,12 +87,6 @@ class CreateIdea extends Component {
             errorMessage += "Description length cannot exceed 150 characters.\n"
         }
 
-        if (this.refs.picture.files.length > 0) {
-            if (this.refs.picture.files[0].size > 500000) {
-                errorMessage += "Picture size cannot exceed 500 KB.\n"
-            }
-        }
-
         if (errorMessage.length > 0) {
             errorMessage += "\nPlease correct before submitting.\n"
             alert(errorMessage);
@@ -64,7 +100,6 @@ class CreateIdea extends Component {
 
     handleCancel = (event) => {
         event.preventDefault();
-
         this.props.history.push('/ideas');
     }
 
@@ -80,6 +115,23 @@ class CreateIdea extends Component {
 
         return(
             <div className="outer-body">
+
+                <div style={styles.root}>
+                <h1>Select an Theme</h1>
+                    <GridList
+                        cellHeight={180}
+                        style={styles.gridList}
+                    >
+                        {tilesData.map((tile) => (
+                        <GridTile
+                            key={tile.img}
+                            title={tile.title}
+                            onClick={this.handleClick.bind(this, tile)}
+                        ><img src={tile.img} /></GridTile>
+                        ))}
+                    </GridList>
+                    </div>
+
                 <div className="idea_form">
                     <div className="title">
                         Submit a post!
@@ -110,15 +162,6 @@ class CreateIdea extends Component {
                                 onChange={this.handleChange}
                             />
                             <br />
-
-                            <div className="add-visual">
-                                <input type="file"
-                                    name="picture"
-                                    ref="picture"
-                                    value={this.state.picture}
-                                    onChange={this.handleChange}
-                                />
-                            </div>
 
                             <div className="submitIdea">
                                 <RaisedButton
