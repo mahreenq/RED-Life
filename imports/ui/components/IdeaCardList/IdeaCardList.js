@@ -20,19 +20,20 @@ const styles = {
 const IdeaCardList = ({ideaData, removeIdea, addVote, removeVote, userId}) => (
     <div>
         <div className="ideasHeader">
-            <Card className="ideasHeaderCard">
+            <Card className="ideasHeaderCard" style={{borderRadius:'40px'}}>
                 <CardTitle
                     titleStyle={styles.header}
                     title="TAKE A LOOK THROUGH SOME GREAT POSTS"
                     subtitleStyle = {styles.subtitle}
                     subtitle="Make sure to get involved and vote!"
                 />
-                <CardActions>
+                <CardActions style={{borderRadius:'30px'}}>
                     <Link to = '/createidea'>
                         <RaisedButton
                             backgroundColor= '#e1231a'
                             labelColor='#ffffff'
                             label="SHARE YOUR OWN POSTS HERE"
+                            className="shareIdeasButton"
                         />
                     </Link>
                 </CardActions>
