@@ -76,11 +76,14 @@ class Header extends Component {
 
     render() {
         let logo = null;
-        if (location.pathname !== '/login' && location.pathname !== '/setupprofile' && location.pathname !== '/') {
-            return logo = <RenderWithLinkToLogin />
+        if (location.pathname == '/') {
+            return logo = null;
         }else if (location.pathname !== '/register'){
             return logo = <RenderWithLinkIdeas />
-        }else {
+        }else if (location.pathname !== '/login' && location.pathname !== '/setupprofile' && location.pathname !== '/') {
+            return logo = <RenderWithLinkToLogin />
+        }
+        else {
             return logo = <RenderWithJustImage />
         }
 
