@@ -35,7 +35,7 @@
 }
 
 .registerSection {
-    background-color: #e8e8e8; /* grey */
+    /* background-color: #e8e8e8; grey */
     min-height: 100%;
     text-align: center;
     display: flex;
@@ -43,4 +43,13 @@
     justify-content: center;
     align-items: center;
     font-family: 'Roboto', sans-serif;
+     background:/* radial-gradient(
+        rgba(218, 209, 209, 0.637),
+        rgb(10, 1, 1)),  */
+      url("/images/grid.jpg");
+      background-position: cover;
+}
+
+.registerButtonHomePage a{
+    color: #e1231a;
 }

@@ -57,7 +57,7 @@ class Login extends Component{
                 submitBtnLabel="Login"
                 submitAction={this.loginWithPassword}
               />
-                    <p>Don't have an account? <Link to="/register">Register</Link></p>
+                    <p className="registerButtonHomePage">Don't have an account? <Link to="/register">Register</Link></p>
           </div>
         </div>
           )
