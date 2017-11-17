@@ -128,7 +128,7 @@ class CreateIdea extends Component {
                         style={styles.gridList}
                     >
                         {tilesData.map((tile) => (
-                            <a class="imageAnchor" href="#">
+                            <a className="imageAnchor" href="#">
                         <GridTile
                             className="images"
                             key={tile.img}
