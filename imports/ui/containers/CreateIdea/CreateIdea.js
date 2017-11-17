@@ -38,7 +38,7 @@ const styles = {
       title: 'Random',
     },
     {
-      img: './images/news.png',
+      img: './images/rednews.png',
       title: 'Staff Announcement',
     },
   ];
