@@ -52,9 +52,9 @@ class Images extends Component{
   // }
 
   handleClick(tile) {
-    console.log('Hit', tile);
+    //console.log('Hit', tile);
     this.setState({picture: tile.img})
-    console.log(this.state.picture)
+    //console.log(this.state.picture)
   }
 
   render(){

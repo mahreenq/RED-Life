@@ -120,7 +120,24 @@ class CreateIdea extends Component {
 
         return(
             <div className="outer-body">
-
+                <h1>What are you posting about?</h1>
+                <h2 id="theme"></h2>
+                <div style={styles.root}>
+                    <GridList
+                        cellHeight={180}
+                        style={styles.gridList}
+                    >
+                        {tilesData.map((tile) => (
+                            <a key={tile.img} className="imageAnchor" href="#">
+                        <GridTile
+                            className="images"
+                            key={tile.img}
+                            title={tile.title}
+                            onClick={this.handleClick.bind(this, tile)}
+                        ><img src={tile.img} /></GridTile></a>
+                        ))}
+                    </GridList>
+                    </div>
 
                 <div className="idea_form">
                     <div className="title">
@@ -157,7 +174,7 @@ class CreateIdea extends Component {
                     
 
                     <br />
-            
+
                     <form className="create_idea">
                         <div>
                             <TextField
