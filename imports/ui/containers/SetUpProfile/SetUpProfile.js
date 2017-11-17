@@ -56,12 +56,6 @@ class SetUpProfile extends Component{
           errorMessage += "Bio length cannot exceed 150 characters.\n"
       }
 
-      if (this.refs.picture.files.length > 0) {
-          if (this.refs.picture.files[0].size > 500000) {
-              errorMessage += "Picture size cannot exceed 500 KB.\n"
-          }
-      }
-
       if (errorMessage.length > 0) {
           errorMessage += "\nPlease correct before submitting.\n"
           alert(errorMessage);
