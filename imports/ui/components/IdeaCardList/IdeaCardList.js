@@ -32,7 +32,7 @@ const IdeaCardList = ({ideaData, removeIdea, addVote, removeVote, userId}) => (
                         <RaisedButton
                             backgroundColor= '#e1231a'
                             labelColor='#ffffff'
-                            label="SHARE YOUR OWN POSTS HERE"
+                            label="SHARE YOUR OWN POST HERE"
                             className="shareIdeasButton"
                         />
                     </Link>
