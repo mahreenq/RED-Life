@@ -55,8 +55,8 @@ class CreateIdea extends Component {
     }
 
     handleClick(tile) {
-        this.setState({picture: tile.img})
-        console.log(this.state)
+        this.setState({picture: tile.img});
+        document.getElementById("theme").innerHTML = tile.title;
     }
 
     handleChange = (event) => {
@@ -120,19 +120,21 @@ class CreateIdea extends Component {
 
         return(
             <div className="outer-body">
-
+                <h1>What are you posting about?</h1>
+                <h2 id="theme"></h2>
                 <div style={styles.root}>
-                <h1>Select an Theme</h1>
                     <GridList
                         cellHeight={180}
                         style={styles.gridList}
                     >
                         {tilesData.map((tile) => (
+                            <a class="imageAnchor" href="#">
                         <GridTile
+                            className="images"
                             key={tile.img}
                             title={tile.title}
                             onClick={this.handleClick.bind(this, tile)}
-                        ><img src={tile.img} /></GridTile>
+                        ><img src={tile.img} /></GridTile></a>
                         ))}
                     </GridList>
                     </div>
@@ -142,7 +144,7 @@ class CreateIdea extends Component {
                         Submit a post!
                     </div>
                     <br />
-
+            
                     <form className="create_idea">
                         <div>
                             <TextField
