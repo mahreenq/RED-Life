@@ -96,7 +96,7 @@ class EditProfile extends Component{
     }
 
     render(){
-        console.log(this.state.email);
+        //console.log(this.state.email);
 
         return(
             <div className="editOuterBody">
