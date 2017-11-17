@@ -23,7 +23,7 @@ const styles = {
       overflowY: 'auto',
     },
   };
-  
+
   const tilesData = [
     {
       img: './images/event.jpg',
@@ -85,6 +85,11 @@ class CreateIdea extends Component {
             errorMessage += "Description cannot be blank.\n"
         } else if (fieldLength > 150) {
             errorMessage += "Description length cannot exceed 150 characters.\n"
+        }
+
+        fieldLength = this.state.picture.length;
+        if (fieldLength === 0) {
+            errorMessage += "Please select a theme.\n"
         }
 
         if (errorMessage.length > 0) {

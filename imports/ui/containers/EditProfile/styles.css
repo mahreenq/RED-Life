@@ -118,6 +118,20 @@
     color:#2590EB;
 }
 
+.gravatarEdit {
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.gravatarEdit a {
+    text-decoration: none;
+    color: #e1231a;
+}
+
+.gravatarEdit a:hover {
+    text-decoration: underline;
+}
+
 .saveEdit {
     display: flex;
     justify-content: space-around;
