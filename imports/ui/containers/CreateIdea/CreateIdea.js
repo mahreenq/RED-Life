@@ -8,18 +8,18 @@ import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 import './styles';
 
 const styles = {
     root: {
       display: 'flex',
-      flexWrap: 'wrap',
       justifyContent: 'space-around',
     },
     gridList: {
       width: 500,
-      height: 450,
+      height: 200,
       overflowY: 'auto',
     },
   };
@@ -141,8 +141,38 @@ class CreateIdea extends Component {
 
                 <div className="idea_form">
                     <div className="title">
-                        Submit a post!
+                       <h1> Submit a post! </h1>
                     </div>
+
+
+
+
+
+                    <div className="postCategories">
+    
+                            <CardTitle title="Choose a Category" style={{textAlign:'center'}}  />
+                         
+                 
+                    <h4 id="theme"> </h4>
+                    <div style={styles.root}>
+                        <GridList
+                            cellHeight={90}
+                            style={styles.gridList}
+                        >
+                            {tilesData.map((tile) => (
+                                <a className="imageAnchor" href="#">
+                            <GridTile
+                                className="images"
+                                key={tile.img}
+                                title={tile.title}
+                                onClick={this.handleClick.bind(this, tile)}
+                            ><img src={tile.img} /></GridTile></a>
+                            ))}
+                        </GridList>
+                        </div>
+                    </div>
+                    
+
                     <br />
 
                     <form className="create_idea">
