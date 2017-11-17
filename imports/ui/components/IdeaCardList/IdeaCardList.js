@@ -42,7 +42,7 @@ const IdeaCardList = ({ideaData, removeIdea, addVote, removeVote, userId}) => (
 
         {ideaData !== undefined && ideaData.length > 0 ?
             <div className="ideaCardList">
-                {ideaData.map(idea =>
+                {ideaData.reverse().map(idea =>
                     <IdeaCard
                         key={idea._id}
                         idea={idea}
