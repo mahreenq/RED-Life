@@ -19,11 +19,11 @@ class ensureLoggedIn extends Component {
     componentWillMount() {
         setTimeout(() => {
             if (!Meteor.userId()){
-                console.log("Not logged in")
+                //console.log("Not logged in")
                 this.props.history.push('/')
 
             } else {
-                console.log("login")
+                //console.log("login")
             }
         }, 200)
     }

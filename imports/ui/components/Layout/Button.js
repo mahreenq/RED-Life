@@ -36,7 +36,7 @@ class Button extends Component {
     setTimeout(() => {
       this.props.history.push('/');
     }, 100)
-    
+
   }
 
   onHandleClick() {
@@ -47,9 +47,9 @@ class Button extends Component {
 
   render(){
     let pathName = this.props.history.location.pathname;
-    console.log('User', Meteor.userId());
+    //console.log('User', Meteor.userId());
     Meteor.startup(() => {
-      
+
     })
       return (
 
@@ -57,23 +57,23 @@ class Button extends Component {
       <div className="headerButtons">
 
 
-      
-       { pathName !== "/" && pathName !== "/setupprofile" && pathName !== "/register" ? 
+
+       { pathName !== "/" && pathName !== "/setupprofile" && pathName !== "/register" ?
         <div className="ideasUsersButtons">
           <RaisedButton label="Logout" style={style} onClick={(e) => this.handleClick(e)}/>
           <Link to="/ideas"><RaisedButton label="Posts" secondary={true} style={style} /></Link>
           <Link to="/users"><RaisedButton label="Users" secondary={true} style={style} /></Link>
-         
+
         </div>
         : null }
 
 
         <div className="profileButton">
-          {pathName !== "/" && pathName !== "/setupprofile" && pathName !== "/register"? 
+          {pathName !== "/" && pathName !== "/setupprofile" && pathName !== "/register"?
                   <Link to={'/'} onClick={this.onHandleClick.bind(this)}>
                       <Avatar
                         icon={<i className="material-icons ">person</i>}
-     
+
                         color="#e1231a"
                         backgroundColor="white"
                         size={35}
@@ -81,11 +81,11 @@ class Button extends Component {
                       />
                      </Link>  : null }
         </div>
-        
 
-  
+
+
       </div>
-      
+
     )
   }
 };

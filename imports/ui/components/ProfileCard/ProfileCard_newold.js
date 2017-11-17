@@ -13,8 +13,8 @@ import './styles.css';
 const ProfileCard = ({user , userVote}) => {
 
 
-    console.log(user._id);
-    console.log (user);
+    //console.log(user._id);
+    //console.log (user);
 
     let course = '';
     let bio = '';
@@ -34,7 +34,7 @@ const ProfileCard = ({user , userVote}) => {
 
         return (
 
-   <div className="individual-profile-card">       
+   <div className="individual-profile-card">
   <div className="product-viewer">
   <div className="header">
     <a href="#" className="VoteCount">{`Voted: ${userVote}`}</a>
@@ -44,13 +44,13 @@ const ProfileCard = ({user , userVote}) => {
     </ul>
   </div>
   <section className="product-viewer_content">
-      
+
     <div className="content-slider slide-2-active">
       <div className="slider-item">
         <figure>
           {/* <img src="https://puu.sh/k27la/555a930f8e.png" alt="" /> */}
           <img src="/images/grumpy_dog.jpg" alt="" />
-          
+
           <div className="figcaption">
             <span className="desc"><h3>{`Enrolled in:  ${user.course}`}</h3></span>
             <span className="name"><h2>{user.name}</h2></span>
@@ -59,7 +59,7 @@ const ProfileCard = ({user , userVote}) => {
         </figure>
       </div>
     </div>
-    
+
   </section>
 </div>
 </div>
@@ -68,4 +68,3 @@ const ProfileCard = ({user , userVote}) => {
 };
 
 export default ProfileCard;
-
