@@ -49,7 +49,7 @@ class SetUpProfile extends Component{
       fieldLength = this.refs.course.props.value.length;
       if (fieldLength === 0) {
           errorMessage += "Course cannot be blank.\n"
-      } 
+      }
 
       fieldLength = this.refs.bio.props.value.length;
       if (fieldLength > 150) {
@@ -105,7 +105,7 @@ class SetUpProfile extends Component{
                     <MenuItem value="Application Developer Professional" primaryText="Application Developer Professional" />
                     <MenuItem value="Digital Marketing Professional" primaryText="Digital Marketing Professional" />
                     <MenuItem value="RED Staff" primaryText="RED Staff" />
-                </SelectField>            
+                </SelectField>
             </div>
 
             <div className="input-container">
@@ -118,13 +118,9 @@ class SetUpProfile extends Component{
                 />
             </div>
 
-            <div><input type="file"
-                    name="picture"
-                    ref="picture"
-                    value={this.state.picture}
-                    onChange={this.handleChange}
-                    className="foo"
-                /></div>
+            <div className="gravatarSetup">
+                <a href="http://www.gravatar.com" target="_blank">Click here to set up a Gravatar.</a>
+            </div>
 
             <div className="button-container">
               <button type="submit" label="SUBMIT Profile info" onClick={this.handleSubmit}><span>Submit</span></button>

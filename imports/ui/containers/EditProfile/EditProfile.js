@@ -167,6 +167,10 @@ class EditProfile extends Component{
                                 className="foo"
                             /></div> */}
 
+                            <div className="gravatarEdit">
+                                <a href="http://www.gravatar.com" target="_blank">Click here to set up a Gravatar.</a>
+                            </div>
+
                             <div className="saveEdit">
                                 <RaisedButton
                                     label="Save"
