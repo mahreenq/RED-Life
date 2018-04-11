@@ -1,6 +1,6 @@
 # RED-Stuff
 
-React App
+React App - Social media application for students at RED Academy to get to know each other and share ideas for events.
 
 <h3>ASK:</h3> 
 <p>Design and build a real-time JavaScript web application in a team environment. The social media app should allow students and staff at RED Academy to share their ideas/posts. Registered members should be able to edit their profile, post ideas and vote on ideas.</p>
