@@ -1,4 +1,4 @@
-# RED-Stuff
+# RED-Life
 
 React App - Social media application for students at RED Academy to get to know each other and share ideas for events.
 
