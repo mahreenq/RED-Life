@@ -7,6 +7,6 @@ React App
 
 <h3>FINISHED PRODUCT:</h3> <p> The web application was built using Meteor as a platform. React was used as the rendering library. Data was stored using MongoDB as the database. Group performance was optimized by using Git for version control and collaboration. Hosted on Heroku.</p>
 
-<img  src="./screenshots/red_home.png" width="70%">
-<img  src="./screenshots/red_posts.png width="50%">
-<img  src="./screenshots/red_users.png width="50%">
+<img  src="./screenshots/red_home.png" width="80%">
+<img  src="./screenshots/red_posts.png" width="70%">
+<img  src="./screenshots/red_users.png" width="70%">
